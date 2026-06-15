@@ -52,7 +52,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   }
 
   return (
-    <main className="container-page py-12 text-[var(--ink)]">
+    <div className="container-page py-12 text-[var(--ink)]">
       <article className="relative z-[2] mx-auto max-w-[1120px]">
         {/* Nav */}
         <nav className="flex items-center justify-between gap-4">
@@ -119,6 +119,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           <a className="mt-6 inline-block text-sm font-bold text-[var(--accent-cyan)] hover:text-[var(--ink)] transition-colors" href={`mailto:${data.profile.email}`}>{data.profile.email}</a>
         </section>
       </article>
-    </main>
+    </div>
   );
 }

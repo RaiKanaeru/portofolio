@@ -138,7 +138,7 @@ export default async function Home() {
             <TiltCard key={item.href}>
               <Link href={item.href} className="project-card spotlight-card group block p-7 transition duration-300 h-full">
                 <span className="relative z-[1] border border-[var(--line)] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[var(--accent-cyan)]">{item.tag}</span>
-                <h3 className="relative z-[1] heading-font mt-5 text-xl font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--accent-cyan)]">{item.title}</h3>
+                <h2 className="relative z-[1] heading-font mt-5 text-xl font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--accent-cyan)]">{item.title}</h2>
                 <p className="relative z-[1] mt-3 text-sm leading-7 text-[var(--muted)]">{item.desc}</p>
                 <p className="relative z-[1] mt-5 text-[10px] font-bold text-[var(--muted)] opacity-60 transition group-hover:opacity-100">ENTER →</p>
               </Link>

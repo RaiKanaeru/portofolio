@@ -88,9 +88,9 @@ export default function ProjectsPage() {
                   {Number(project.number) <= 2 ? "CASE_FILE" : "BUILD"}
                 </span>
               </div>
-              <h3 className="relative z-[1] heading-font mt-4 text-lg font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--accent-cyan)]">
+              <h2 className="relative z-[1] heading-font mt-4 text-lg font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--accent-cyan)]">
                 {project.title}
-              </h3>
+              </h2>
               <p className="relative z-[1] mt-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
                 {project.category}
               </p>

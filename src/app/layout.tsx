@@ -81,9 +81,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <CyberEffects />
           <ParticleField />
           <Navbar locale={locale} />
-          <div className="relative z-[2] flex-1">
+          <main className="relative z-[2] flex-1">
             <PageTransition>{children}</PageTransition>
-          </div>
+          </main>
           <Footer />
           <AudioPlayer />
           <BackToTop />
