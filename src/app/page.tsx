@@ -93,7 +93,7 @@ export default async function Home() {
           </p>
           <h1 className="h1-display mt-6 max-w-3xl text-[42px] md:text-[58px] xl:text-[68px]">
             {data.profile.heroLines.map((line: string) => (
-              <span key={line} className="block cyber-glitch" data-text={line}>{line}</span>
+              <span key={line} className="block">{line}</span>
             ))}
           </h1>
           <ScrollRevealText text={data.profile.summary} className="mt-8 max-w-xl text-sm leading-7 text-[var(--muted)]" />

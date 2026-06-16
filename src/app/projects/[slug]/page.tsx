@@ -72,9 +72,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="border border-[var(--line)] bg-[var(--surface)] p-7 md:p-9">
             <p className="heading-font text-6xl font-bold text-[var(--dim)]">{project.number}</p>
             <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">{project.category}</p>
-            <h1 className="heading-font mt-5 text-4xl font-bold leading-tight md:text-6xl cyber-glitch" data-text={project.title}>
-              {project.title}
-            </h1>
+            <h1 className="heading-font mt-5 text-4xl font-bold leading-tight md:text-6xl">{project.title}</h1>
             <p className="mt-7 max-w-3xl text-sm leading-7 text-[var(--muted)]">{project.summary}</p>
           </div>
 

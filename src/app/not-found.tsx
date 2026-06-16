@@ -15,7 +15,7 @@ export default function NotFound() {
             404
           </h1>
           <h1
-            className="heading-font text-[120px] md:text-[200px] font-bold leading-none absolute inset-0 cyber-glitch"
+            className="heading-font text-[120px] md:text-[200px] font-bold leading-none absolute inset-0"
             data-text="404"
             style={{ color: "rgba(34, 211, 238, 0.15)" }}
           >

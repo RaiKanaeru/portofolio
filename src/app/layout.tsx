@@ -4,15 +4,11 @@ import { cookies } from "next/headers";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CyberEffects from "@/components/CyberEffects";
-import ParticleField from "@/components/ParticleField";
-import AudioPlayer from "@/components/AudioPlayer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import CommandPalette from "@/components/CommandPalette";
 import PageTransition from "@/components/PageTransition";
 import LoadingScreen from "@/components/LoadingScreen";
-import HomeRobotMascot from "@/components/HomeRobotMascot";
 
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -76,16 +72,12 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body className={`${jetbrains.variable} ${inter.variable} min-h-full flex flex-col`}>
         <div className="cyber-shell relative min-h-screen flex flex-col bg-[var(--canvas)]">
           <LoadingScreen />
-          <HomeRobotMascot />
           <ScrollProgress />
-          <CyberEffects />
-          <ParticleField />
           <Navbar locale={locale} />
           <main className="relative z-[2] flex-1">
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
-          <AudioPlayer />
           <BackToTop />
           <CommandPalette />
         </div>

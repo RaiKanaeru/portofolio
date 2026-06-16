@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════
-   CYBER / PIXEL DESIGN SYSTEM
-   Inspired by portofolio-xyrionex.vercel.app
+   WARM EDITORIAL ENGINEER DESIGN SYSTEM
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-  --canvas: #050505;
-  --surface: #0c0c0e;
-  --card: #111113;
-  --ink: #f0f0f0;
-  --muted: #a1a1aa;
-  --dim: #7d7d87;
-  --line: #2a2a2e;
-  --line-subtle: #1a1a1e;
-  --accent: #f0f0f0;
-  --accent-cyan: #22d3ee;
-  --glow: rgba(255, 255, 255, 0.06);
+  --canvas: #f7f3ea;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #4b5563;
+  --dim: #6b7280;
+  --line: #e5e7eb;
+  --line-subtle: #f3f4f6;
+  --accent: #2563eb;
+  --accent-cyan: #2563eb;
+  --accent-gold: #d97706;
+  --glow: rgba(37, 99, 235, 0.05);
 
   /* ── Layout & rhythm tokens ── */
-  --page-max: 1296px;
+  --page-max: 1180px;
   --page-pad-x: 20px;
-  --page-pad-x-md: 40px;
-  --section-y: 96px;
+  --page-pad-x-md: 72px;
+  --section-y: 112px;
   --section-y-mobile: 64px;
-  --section-y-tight: 64px;
-  --section-y-tight-mobile: 44px;
-  --card-pad: 28px;
-  --card-pad-mobile: 22px;
+  --section-y-tight: 80px;
+  --section-y-tight-mobile: 48px;
+  --card-pad: 32px;
+  --card-pad-mobile: 24px;
 }
 
 * {
@@ -48,7 +48,7 @@ body {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(37, 99, 235, 0.2);
   color: var(--ink);
 }
 
@@ -155,39 +155,13 @@ body {
   max-width: 42rem;
 }
 
-/* ── Scanline Overlay ────────────────────────────────────── */
+/* ── Clean Shell ───────────────────────────────────────────── */
 
-.cyber-shell::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(255, 255, 255, 0.012) 2px,
-    rgba(255, 255, 255, 0.012) 4px
-  );
+.cyber-shell {
+  position: relative;
 }
 
-/* ── Grid Background ─────────────────────────────────────── */
-
-.cyber-shell::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.02), transparent 40%),
-    radial-gradient(circle at 80% 90%, rgba(255, 255, 255, 0.015), transparent 40%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 80px),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 80px);
-}
-
-/* ── Cyber Card ──────────────────────────────────────────── */
+/* ── Editorial Card ────────────────────────────────────────── */
 
 .cyber-card {
   background: var(--card);
@@ -195,57 +169,14 @@ body {
   position: relative;
   overflow: hidden;
   transition: border-color 300ms ease, box-shadow 300ms ease, transform 200ms ease;
-}
-
-.cyber-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 40%);
-}
-
-.cyber-card > * {
-  position: relative;
-  z-index: 1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
 }
 
 .cyber-card:hover {
-  border-color: rgba(34, 211, 238, 0.35);
-  box-shadow: 0 8px 40px rgba(34, 211, 238, 0.05);
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
-}
-
-/* ── Terminal Card ───────────────────────────────────────── */
-
-.terminal-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  position: relative;
-}
-
-.terminal-card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
-}
-
-/* ── Pixel decorative ────────────────────────────────────── */
-
-.pixel-block {
-  image-rendering: pixelated;
-  border: 2px solid var(--line);
-  background: transparent;
-  transition: background 300ms ease, border-color 300ms ease;
-}
-
-.pixel-block.active {
-  background: var(--ink);
-  border-color: var(--ink);
 }
 
 /* ── Buttons ─────────────────────────────────────────────── */
@@ -255,24 +186,25 @@ body {
   align-items: center;
   gap: 8px;
   padding: 12px 28px;
-  background: var(--ink);
-  color: #050505;
-  border: 1px solid var(--ink);
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: all 200ms ease;
   text-decoration: none;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
 }
 
 .cyber-btn-primary:hover {
-  background: transparent;
-  color: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.12);
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
 }
 
 .cyber-btn-secondary {
@@ -280,23 +212,22 @@ body {
   align-items: center;
   gap: 8px;
   padding: 12px 28px;
-  background: transparent;
+  background: var(--surface);
   color: var(--ink);
   border: 1px solid var(--line);
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  border-radius: 6px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: all 200ms ease;
   text-decoration: none;
 }
 
 .cyber-btn-secondary:hover {
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.08);
+  border-color: var(--muted);
+  background: var(--line-subtle);
 }
 
 /* ── Section numbering ───────────────────────────────────── */
@@ -428,12 +359,11 @@ body {
   pointer-events: none;
 }
 
-/* ── Scroll Reveal ───────────────────────────────────────── */
+/* ── Simple Reveal (Observer Disabled for Light Theme) ──────── */
 
 .cyber-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cyber-reveal.cyber-visible {

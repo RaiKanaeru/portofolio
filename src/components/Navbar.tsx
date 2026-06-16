@@ -69,17 +69,17 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-[2px] w-5 bg-white transition-all duration-300 ${
+            className={`block h-[2px] w-5 bg-[var(--ink)] transition-all duration-300 ${
               mobileOpen ? "rotate-45 translate-y-[7px]" : ""
             }`}
           />
           <span
-            className={`block h-[2px] w-5 bg-white transition-all duration-300 ${
+            className={`block h-[2px] w-5 bg-[var(--ink)] transition-all duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-[2px] w-5 bg-white transition-all duration-300 ${
+            className={`block h-[2px] w-5 bg-[var(--ink)] transition-all duration-300 ${
               mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
             }`}
           />
@@ -99,7 +99,7 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
               href={link.href}
               className={`py-3 px-4 text-[12px] font-bold uppercase tracking-[0.18em] transition-colors border-l-2 ${
                 isActive(link.href)
-                  ? "border-[var(--accent-cyan)] text-[var(--accent-cyan)] bg-[rgba(34,211,238,0.04)]"
+                  ? "border-[var(--accent-cyan)] text-[var(--accent-cyan)] bg-[var(--glow)]"
                   : "border-transparent text-[var(--dim)] hover:text-[var(--ink)] hover:border-[var(--line)]"
               }`}
             >

@@ -13,9 +13,7 @@ export default function ArcadePage() {
       {/* Header */}
       <div className="cyber-reveal stack-header text-center">
         <p className="section-num"><ScrambleText text="// CYBER_ARCADE" /></p>
-        <h1 className="h1-display mt-4 cyber-glitch" data-text="PONG_GAME">
-          PONG_GAME
-        </h1>
+        <h1 className="h1-display mt-4">PONG_GAME</h1>
         <p className="lead-text mt-4 mx-auto">
           Challenge the AI in a game of Pong. Choose your difficulty and prove your reflexes.
         </p>

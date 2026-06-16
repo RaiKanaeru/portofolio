@@ -1,0 +1,1088 @@
+{
+  "schema_version": "1.0.0",
+  "workspaceRoot": "D:\\CODING\\porto",
+  "nodes": {
+    "D:/CODING/porto/.stitch-docs-assets/assets_auroraTunerConfig-CN7VuFvm.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_auroraTunerConfig-CN7VuFvm.js",
+      "moduleName": ".stitch-docs-assets/assets_auroraTunerConfig-CN7VuFvm.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:14.698Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_ChatScreenMention-CxKQ3Qbk.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_ChatScreenMention-CxKQ3Qbk.js",
+      "moduleName": ".stitch-docs-assets/assets_ChatScreenMention-CxKQ3Qbk.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:14.733Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Checkbox-Cfq0phao.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Checkbox-Cfq0phao.js",
+      "moduleName": ".stitch-docs-assets/assets_Checkbox-Cfq0phao.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:14.764Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_chunk-UIGDSWPH-DQ7ujm74.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_chunk-UIGDSWPH-DQ7ujm74.js",
+      "moduleName": ".stitch-docs-assets/assets_chunk-UIGDSWPH-DQ7ujm74.js",
+      "exports": [],
+      "imports": [
+        "react-router/dom",
+        "RouterProvider"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:14.822Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_clipboard-DmbYn-0m.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_clipboard-DmbYn-0m.js",
+      "moduleName": ".stitch-docs-assets/assets_clipboard-DmbYn-0m.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:14.852Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_CreatePage-BsBIB9bS.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_CreatePage-BsBIB9bS.js",
+      "moduleName": ".stitch-docs-assets/assets_CreatePage-BsBIB9bS.js",
+      "exports": [],
+      "imports": [
+        "./DebugPanel-DAdZ-3WP.js"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:15.535Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_DebugHelpers-DzHF9RmK.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_DebugHelpers-DzHF9RmK.js",
+      "moduleName": ".stitch-docs-assets/assets_DebugHelpers-DzHF9RmK.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:15.565Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_DebugStore-ZgS4QU9X.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_DebugStore-ZgS4QU9X.js",
+      "moduleName": ".stitch-docs-assets/assets_DebugStore-ZgS4QU9X.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:15.602Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_DesignPage-Dz-ZF_14.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_DesignPage-Dz-ZF_14.js",
+      "moduleName": ".stitch-docs-assets/assets_DesignPage-Dz-ZF_14.js",
+      "exports": [],
+      "imports": [
+        "./screenAnalysisAgent-D9hXfEzE.js",
+        "./screenAnalysisAgent-D9hXfEzE.js",
+        "./domCaptureEngineSource-CeGbaXfn.js",
+        "./domCaptureEngineSource-CeGbaXfn.js",
+        "./MermaidInner-Bstg1tt-.js",
+        "./AgGridTableInner-CAgyMhOd.js",
+        "./ChartJsInner-B4ryZaga.js",
+        "./DebugPanel-DAdZ-3WP.js"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:15.993Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_dist-11ElFwxu.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_dist-11ElFwxu.js",
+      "moduleName": ".stitch-docs-assets/assets_dist-11ElFwxu.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.061Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_DocsPage-BeyEd_fU.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_DocsPage-BeyEd_fU.js",
+      "moduleName": ".stitch-docs-assets/assets_DocsPage-BeyEd_fU.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.092Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_DocumentPlaceholder-CZ47hkaN.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_DocumentPlaceholder-CZ47hkaN.js",
+      "moduleName": ".stitch-docs-assets/assets_DocumentPlaceholder-CZ47hkaN.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.122Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_DotGridBackground-BU3obYT3.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_DotGridBackground-BU3obYT3.js",
+      "moduleName": ".stitch-docs-assets/assets_DotGridBackground-BU3obYT3.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.148Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_dotGridConfig-Cyl0B_R9.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_dotGridConfig-Cyl0B_R9.js",
+      "moduleName": ".stitch-docs-assets/assets_dotGridConfig-Cyl0B_R9.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.179Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_editor-monaco-BgeyQWHS.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_editor-monaco-BgeyQWHS.js",
+      "moduleName": ".stitch-docs-assets/assets_editor-monaco-BgeyQWHS.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.215Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_editor-tiptap-BqXXTuGG.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_editor-tiptap-BqXXTuGG.js",
+      "moduleName": ".stitch-docs-assets/assets_editor-tiptap-BqXXTuGG.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.463Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_editor-xyflow-nqRDgPO3.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_editor-xyflow-nqRDgPO3.js",
+      "moduleName": ".stitch-docs-assets/assets_editor-xyflow-nqRDgPO3.js",
+      "exports": [],
+      "imports": [
+        "@xyflow/${e}/dist/style.css"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.562Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_FileFetch-BpSUGAsO.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_FileFetch-BpSUGAsO.js",
+      "moduleName": ".stitch-docs-assets/assets_FileFetch-BpSUGAsO.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.592Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Homepage-B8LZXc_c.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Homepage-B8LZXc_c.js",
+      "moduleName": ".stitch-docs-assets/assets_Homepage-B8LZXc_c.js",
+      "exports": [],
+      "imports": [
+        "./AuroraEffectCore-FRU661Qr.js",
+        "./StitchBlurEffectCore-BuTvQZWS.js"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.808Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_index-Cjhqt8el.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_index-Cjhqt8el.js",
+      "moduleName": ".stitch-docs-assets/assets_index-Cjhqt8el.js",
+      "exports": [],
+      "imports": [
+        "./debugConfig-SLxrBX8g.js",
+        "./CreatePage-BsBIB9bS.js",
+        "./DesignPage-Dz-ZF_14.js",
+        "./PreviewPage-DGlThheu.js",
+        "./Homepage-B8LZXc_c.js",
+        "./PrivacyPage-CKG6eHXL.js",
+        "./DocsPage-BeyEd_fU.js",
+        "./SettingsPage-ChjQ66h9.js"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.848Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_live-session-logger-ChUSoc8G.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_live-session-logger-ChUSoc8G.js",
+      "moduleName": ".stitch-docs-assets/assets_live-session-logger-ChUSoc8G.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.876Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_LoadingPage-DZk7JdLF.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_LoadingPage-DZk7JdLF.js",
+      "moduleName": ".stitch-docs-assets/assets_LoadingPage-DZk7JdLF.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.905Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Logger-DP6jWtnu.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Logger-DP6jWtnu.js",
+      "moduleName": ".stitch-docs-assets/assets_Logger-DP6jWtnu.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.934Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Markdown-CLIqVbrh.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Markdown-CLIqVbrh.js",
+      "moduleName": ".stitch-docs-assets/assets_Markdown-CLIqVbrh.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:16.964Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_McpSetupPage-BQtpbDAL.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_McpSetupPage-BQtpbDAL.js",
+      "moduleName": ".stitch-docs-assets/assets_McpSetupPage-BQtpbDAL.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:17.656Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Menu-DK4MUGLf.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Menu-DK4MUGLf.js",
+      "moduleName": ".stitch-docs-assets/assets_Menu-DK4MUGLf.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:17.768Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_OutageBanner-tmsCbAeB.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_OutageBanner-tmsCbAeB.js",
+      "moduleName": ".stitch-docs-assets/assets_OutageBanner-tmsCbAeB.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:17.822Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Popover-DVghPR5o.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Popover-DVghPR5o.js",
+      "moduleName": ".stitch-docs-assets/assets_Popover-DVghPR5o.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:17.851Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_PostMessageClient-BTUFdpkU.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_PostMessageClient-BTUFdpkU.js",
+      "moduleName": ".stitch-docs-assets/assets_PostMessageClient-BTUFdpkU.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:17.885Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_preload-helper-5xhW3dnw.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_preload-helper-5xhW3dnw.js",
+      "moduleName": ".stitch-docs-assets/assets_preload-helper-5xhW3dnw.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:17.916Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_PreviewPage-DGlThheu.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_PreviewPage-DGlThheu.js",
+      "moduleName": ".stitch-docs-assets/assets_PreviewPage-DGlThheu.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:18.601Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_PrivacyPage-CKG6eHXL.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_PrivacyPage-CKG6eHXL.js",
+      "moduleName": ".stitch-docs-assets/assets_PrivacyPage-CKG6eHXL.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:19.321Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_prompts-DrdVJ_uw.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_prompts-DrdVJ_uw.js",
+      "moduleName": ".stitch-docs-assets/assets_prompts-DrdVJ_uw.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:19.366Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_rolldown-runtime-C5c2KzVm.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_rolldown-runtime-C5c2KzVm.js",
+      "moduleName": ".stitch-docs-assets/assets_rolldown-runtime-C5c2KzVm.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:19.396Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_Select-BasX9RQl.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_Select-BasX9RQl.js",
+      "moduleName": ".stitch-docs-assets/assets_Select-BasX9RQl.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:19.432Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_SettingsPage-ChjQ66h9.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_SettingsPage-ChjQ66h9.js",
+      "moduleName": ".stitch-docs-assets/assets_SettingsPage-ChjQ66h9.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.118Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_SidePanel-dR882S-s.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_SidePanel-dR882S-s.js",
+      "moduleName": ".stitch-docs-assets/assets_SidePanel-dR882S-s.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.148Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_ToggleGroup-CkrqcOBj.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_ToggleGroup-CkrqcOBj.js",
+      "moduleName": ".stitch-docs-assets/assets_ToggleGroup-CkrqcOBj.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.177Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_UgcTrustBanner-BdrX1pCo.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_UgcTrustBanner-BdrX1pCo.js",
+      "moduleName": ".stitch-docs-assets/assets_UgcTrustBanner-BdrX1pCo.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.294Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_useCallbackRef-DlRlOVSj.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_useCallbackRef-DlRlOVSj.js",
+      "moduleName": ".stitch-docs-assets/assets_useCallbackRef-DlRlOVSj.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.324Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_useCodeExport-DKPdhqNl.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_useCodeExport-DKPdhqNl.js",
+      "moduleName": ".stitch-docs-assets/assets_useCodeExport-DKPdhqNl.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.355Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_useCopyToClipboard-DlnXFmYc.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_useCopyToClipboard-DlnXFmYc.js",
+      "moduleName": ".stitch-docs-assets/assets_useCopyToClipboard-DlnXFmYc.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:20.386Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_useImageUploadNotice-DwTNMP0S.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_useImageUploadNotice-DwTNMP0S.js",
+      "moduleName": ".stitch-docs-assets/assets_useImageUploadNotice-DwTNMP0S.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:21.009Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_v4-Dn1DOa4_.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_v4-Dn1DOa4_.js",
+      "moduleName": ".stitch-docs-assets/assets_v4-Dn1DOa4_.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.245Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_vendor-carousel-D4TACDee.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_vendor-carousel-D4TACDee.js",
+      "moduleName": ".stitch-docs-assets/assets_vendor-carousel-D4TACDee.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.284Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_vendor-marked-Q3Ye_71Q.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_vendor-marked-Q3Ye_71Q.js",
+      "moduleName": ".stitch-docs-assets/assets_vendor-marked-Q3Ye_71Q.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.321Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_vendor-query-D0ZpAID-.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_vendor-query-D0ZpAID-.js",
+      "moduleName": ".stitch-docs-assets/assets_vendor-query-D0ZpAID-.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.360Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_vendor-react-odJ06c5r.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_vendor-react-odJ06c5r.js",
+      "moduleName": ".stitch-docs-assets/assets_vendor-react-odJ06c5r.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.446Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_vendor-ui-DWnqCFEq.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_vendor-ui-DWnqCFEq.js",
+      "moduleName": ".stitch-docs-assets/assets_vendor-ui-DWnqCFEq.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.543Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_vendor-utils-V_sD217L.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_vendor-utils-V_sD217L.js",
+      "moduleName": ".stitch-docs-assets/assets_vendor-utils-V_sD217L.js",
+      "exports": [],
+      "imports": [
+        "util",
+        "util"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.614Z"
+    },
+    "D:/CODING/porto/.stitch-docs-assets/assets_whatsNewUpdates-DQr4JuGv.js": {
+      "filePath": "D:\\CODING\\porto\\.stitch-docs-assets\\assets_whatsNewUpdates-DQr4JuGv.js",
+      "moduleName": ".stitch-docs-assets/assets_whatsNewUpdates-DQr4JuGv.js",
+      "exports": [],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-06T13:28:22.642Z"
+    },
+    "D:/CODING/porto/eslint.config.mjs": {
+      "filePath": "D:\\CODING\\porto\\eslint.config.mjs",
+      "moduleName": "eslint.config.mjs",
+      "exports": [
+        "eslintConfig"
+      ],
+      "imports": [
+        "path",
+        "url",
+        "@eslint/eslintrc"
+      ],
+      "language": "javascript",
+      "mtime": "2026-06-14T16:48:43.853Z"
+    },
+    "D:/CODING/porto/next-env.d.ts": {
+      "filePath": "D:\\CODING\\porto\\next-env.d.ts",
+      "moduleName": "next-env.d.ts",
+      "exports": [],
+      "imports": [
+        "./.next/types/routes.d.ts"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-15T00:03:11.002Z"
+    },
+    "D:/CODING/porto/next.config.ts": {
+      "filePath": "D:\\CODING\\porto\\next.config.ts",
+      "moduleName": "next.config.ts",
+      "exports": [
+        "nextConfig"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:08:30.226Z"
+    },
+    "D:/CODING/porto/postcss.config.mjs": {
+      "filePath": "D:\\CODING\\porto\\postcss.config.mjs",
+      "moduleName": "postcss.config.mjs",
+      "exports": [
+        "config"
+      ],
+      "imports": [],
+      "language": "javascript",
+      "mtime": "2026-06-07T11:27:03.612Z"
+    },
+    "D:/CODING/porto/src/app/about/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\about\\page.tsx",
+      "moduleName": "src/app/about/page.tsx",
+      "exports": [
+        "metadata",
+        "async"
+      ],
+      "imports": [
+        "next/headers",
+        "@/data/portfolio",
+        "@/components/ScrambleText",
+        "@/components/TypewriterText",
+        "@/components/InteractiveTerminal",
+        "@/components/SkillBars",
+        "@/components/ActivityHeatmap",
+        "@/components/GlitchAvatar",
+        "@/components/ScrollRevealText"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T12:58:39.485Z"
+    },
+    "D:/CODING/porto/src/app/arcade/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\arcade\\page.tsx",
+      "moduleName": "src/app/arcade/page.tsx",
+      "exports": [
+        "metadata",
+        "ArcadePage"
+      ],
+      "imports": [
+        "@/components/PongGame",
+        "@/components/ScrambleText"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T11:13:46.793Z"
+    },
+    "D:/CODING/porto/src/app/contact/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\contact\\page.tsx",
+      "moduleName": "src/app/contact/page.tsx",
+      "exports": [
+        "metadata",
+        "async"
+      ],
+      "imports": [
+        "next/headers",
+        "@/data/portfolio",
+        "@/components/ScrambleText",
+        "@/components/TiltCard",
+        "@/components/MagneticButton",
+        "@/components/ScrollRevealText"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T11:13:35.900Z"
+    },
+    "D:/CODING/porto/src/app/layout.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\layout.tsx",
+      "moduleName": "src/app/layout.tsx",
+      "exports": [
+        "metadata",
+        "async"
+      ],
+      "imports": [
+        "next/font/google",
+        "next/headers",
+        "./globals.css",
+        "@/components/Navbar",
+        "@/components/Footer",
+        "@/components/CyberEffects",
+        "@/components/ParticleField",
+        "@/components/AudioPlayer",
+        "@/components/ScrollProgress",
+        "@/components/BackToTop",
+        "@/components/CommandPalette",
+        "@/components/PageTransition",
+        "@/components/LoadingScreen",
+        "@/components/HomeRobotMascot"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-15T00:02:14.417Z"
+    },
+    "D:/CODING/porto/src/app/not-found.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\not-found.tsx",
+      "moduleName": "src/app/not-found.tsx",
+      "exports": [
+        "NotFound"
+      ],
+      "imports": [
+        "next/link"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.252Z"
+    },
+    "D:/CODING/porto/src/app/notes/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\notes\\page.tsx",
+      "moduleName": "src/app/notes/page.tsx",
+      "exports": [
+        "metadata",
+        "async"
+      ],
+      "imports": [
+        "next/headers",
+        "@/data/portfolio",
+        "@/components/ScrambleText",
+        "@/components/TiltCard",
+        "@/components/TypewriterText"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T12:58:37.459Z"
+    },
+    "D:/CODING/porto/src/app/opengraph-image.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\opengraph-image.tsx",
+      "moduleName": "src/app/opengraph-image.tsx",
+      "exports": [
+        "alt",
+        "size",
+        "contentType",
+        "async"
+      ],
+      "imports": [
+        "next/og"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T13:21:47.723Z"
+    },
+    "D:/CODING/porto/src/app/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\page.tsx",
+      "moduleName": "src/app/page.tsx",
+      "exports": [
+        "async"
+      ],
+      "imports": [
+        "next/headers",
+        "next/link",
+        "@/data/portfolio",
+        "@/components/TypewriterText",
+        "@/components/DigitalRain",
+        "@/components/AnimatedCounter",
+        "@/components/TiltCard",
+        "@/components/TechMarquee",
+        "@/components/MagneticButton",
+        "@/components/OrbitingIcons",
+        "@/components/ScrollRevealText"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-15T00:02:31.477Z"
+    },
+    "D:/CODING/porto/src/app/projects/[slug]/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\projects\\[slug]\\page.tsx",
+      "moduleName": "src/app/projects/[slug]/page.tsx",
+      "exports": [
+        "generateStaticParams",
+        "generateMetadata",
+        "async"
+      ],
+      "imports": [
+        "next/navigation",
+        "next/headers",
+        "next/link",
+        "@/data/portfolio"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-15T00:02:22.746Z"
+    },
+    "D:/CODING/porto/src/app/projects/page.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\projects\\page.tsx",
+      "moduleName": "src/app/projects/page.tsx",
+      "exports": [
+        "ProjectsPage"
+      ],
+      "imports": [
+        "react",
+        "next/link",
+        "@/data/portfolio",
+        "@/components/ScrambleText",
+        "@/components/TiltCard"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-15T00:02:40.051Z"
+    },
+    "D:/CODING/porto/src/app/robots.ts": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\robots.ts",
+      "moduleName": "src/app/robots.ts",
+      "exports": [
+        "robots"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.255Z"
+    },
+    "D:/CODING/porto/src/app/sitemap.ts": {
+      "filePath": "D:\\CODING\\porto\\src\\app\\sitemap.ts",
+      "moduleName": "src/app/sitemap.ts",
+      "exports": [
+        "sitemap"
+      ],
+      "imports": [
+        "@/data/portfolio"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.256Z"
+    },
+    "D:/CODING/porto/src/components/ActivityHeatmap.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\ActivityHeatmap.tsx",
+      "moduleName": "src/components/ActivityHeatmap.tsx",
+      "exports": [
+        "ActivityHeatmap"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.257Z"
+    },
+    "D:/CODING/porto/src/components/AnimatedCounter.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\AnimatedCounter.tsx",
+      "moduleName": "src/components/AnimatedCounter.tsx",
+      "exports": [
+        "AnimatedCounter"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:30:48.907Z"
+    },
+    "D:/CODING/porto/src/components/AudioPlayer.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\AudioPlayer.tsx",
+      "moduleName": "src/components/AudioPlayer.tsx",
+      "exports": [
+        "AudioPlayer"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:34:29.033Z"
+    },
+    "D:/CODING/porto/src/components/BackToTop.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\BackToTop.tsx",
+      "moduleName": "src/components/BackToTop.tsx",
+      "exports": [
+        "BackToTop"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:30:19.411Z"
+    },
+    "D:/CODING/porto/src/components/CommandPalette.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\CommandPalette.tsx",
+      "moduleName": "src/components/CommandPalette.tsx",
+      "exports": [
+        "CommandPalette"
+      ],
+      "imports": [
+        "react",
+        "next/navigation"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:30:04.218Z"
+    },
+    "D:/CODING/porto/src/components/CyberEffects.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\CyberEffects.tsx",
+      "moduleName": "src/components/CyberEffects.tsx",
+      "exports": [
+        "CyberEffects"
+      ],
+      "imports": [
+        "react",
+        "next/navigation"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-15T00:17:57.345Z"
+    },
+    "D:/CODING/porto/src/components/DigitalRain.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\DigitalRain.tsx",
+      "moduleName": "src/components/DigitalRain.tsx",
+      "exports": [
+        "DigitalRain"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.263Z"
+    },
+    "D:/CODING/porto/src/components/Footer.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\Footer.tsx",
+      "moduleName": "src/components/Footer.tsx",
+      "exports": [
+        "Footer"
+      ],
+      "imports": [
+        "react",
+        "next/link"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T11:14:22.481Z"
+    },
+    "D:/CODING/porto/src/components/GlitchAvatar.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\GlitchAvatar.tsx",
+      "moduleName": "src/components/GlitchAvatar.tsx",
+      "exports": [
+        "GlitchAvatar"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.265Z"
+    },
+    "D:/CODING/porto/src/components/HomeRobotMascot.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\HomeRobotMascot.tsx",
+      "moduleName": "src/components/HomeRobotMascot.tsx",
+      "exports": [
+        "HomeRobotMascot"
+      ],
+      "imports": [
+        "next/navigation",
+        "@/components/RobotMascot"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T16:19:23.518Z"
+    },
+    "D:/CODING/porto/src/components/InteractiveTerminal.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\InteractiveTerminal.tsx",
+      "moduleName": "src/components/InteractiveTerminal.tsx",
+      "exports": [
+        "InteractiveTerminal"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:30:48.922Z"
+    },
+    "D:/CODING/porto/src/components/LanguageSwitcher.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\LanguageSwitcher.tsx",
+      "moduleName": "src/components/LanguageSwitcher.tsx",
+      "exports": [
+        "LanguageSwitcher"
+      ],
+      "imports": [
+        "next/navigation"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:30:48.923Z"
+    },
+    "D:/CODING/porto/src/components/LiveClock.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\LiveClock.tsx",
+      "moduleName": "src/components/LiveClock.tsx",
+      "exports": [
+        "LiveClock"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.270Z"
+    },
+    "D:/CODING/porto/src/components/LoadingScreen.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\LoadingScreen.tsx",
+      "moduleName": "src/components/LoadingScreen.tsx",
+      "exports": [
+        "LoadingScreen"
+      ],
+      "imports": [
+        "react",
+        "@/components/RobotMascot"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T07:14:54.633Z"
+    },
+    "D:/CODING/porto/src/components/MagneticButton.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\MagneticButton.tsx",
+      "moduleName": "src/components/MagneticButton.tsx",
+      "exports": [
+        "MagneticButton"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.272Z"
+    },
+    "D:/CODING/porto/src/components/Navbar.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\Navbar.tsx",
+      "moduleName": "src/components/Navbar.tsx",
+      "exports": [
+        "Navbar"
+      ],
+      "imports": [
+        "react",
+        "next/link",
+        "next/navigation",
+        "./LanguageSwitcher",
+        "./ScrambleText",
+        "./LiveClock"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T07:16:50.741Z"
+    },
+    "D:/CODING/porto/src/components/OrbitingIcons.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\OrbitingIcons.tsx",
+      "moduleName": "src/components/OrbitingIcons.tsx",
+      "exports": [
+        "OrbitingIcons"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.274Z"
+    },
+    "D:/CODING/porto/src/components/PageTransition.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\PageTransition.tsx",
+      "moduleName": "src/components/PageTransition.tsx",
+      "exports": [
+        "PageTransition"
+      ],
+      "imports": [
+        "react",
+        "next/navigation"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.275Z"
+    },
+    "D:/CODING/porto/src/components/ParticleField.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\ParticleField.tsx",
+      "moduleName": "src/components/ParticleField.tsx",
+      "exports": [
+        "ParticleField"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.277Z"
+    },
+    "D:/CODING/porto/src/components/PongGame.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\PongGame.tsx",
+      "moduleName": "src/components/PongGame.tsx",
+      "exports": [
+        "PongGame"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T12:59:26.786Z"
+    },
+    "D:/CODING/porto/src/components/RobotMascot.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\RobotMascot.tsx",
+      "moduleName": "src/components/RobotMascot.tsx",
+      "exports": [
+        "RobotMascot"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T07:15:43.255Z"
+    },
+    "D:/CODING/porto/src/components/ScrambleText.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\ScrambleText.tsx",
+      "moduleName": "src/components/ScrambleText.tsx",
+      "exports": [
+        "ScrambleText"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.279Z"
+    },
+    "D:/CODING/porto/src/components/ScrollProgress.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\ScrollProgress.tsx",
+      "moduleName": "src/components/ScrollProgress.tsx",
+      "exports": [
+        "ScrollProgress"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.280Z"
+    },
+    "D:/CODING/porto/src/components/ScrollRevealText.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\ScrollRevealText.tsx",
+      "moduleName": "src/components/ScrollRevealText.tsx",
+      "exports": [
+        "ScrollRevealText"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-14T16:14:48.234Z"
+    },
+    "D:/CODING/porto/src/components/SkillBars.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\SkillBars.tsx",
+      "moduleName": "src/components/SkillBars.tsx",
+      "exports": [
+        "SkillBars"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-10T02:30:48.927Z"
+    },
+    "D:/CODING/porto/src/components/TechMarquee.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\TechMarquee.tsx",
+      "moduleName": "src/components/TechMarquee.tsx",
+      "exports": [
+        "TechMarquee"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.285Z"
+    },
+    "D:/CODING/porto/src/components/TiltCard.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\TiltCard.tsx",
+      "moduleName": "src/components/TiltCard.tsx",
+      "exports": [
+        "TiltCard"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.286Z"
+    },
+    "D:/CODING/porto/src/components/TypewriterText.tsx": {
+      "filePath": "D:\\CODING\\porto\\src\\components\\TypewriterText.tsx",
+      "moduleName": "src/components/TypewriterText.tsx",
+      "exports": [
+        "TypewriterText"
+      ],
+      "imports": [
+        "react"
+      ],
+      "language": "typescript",
+      "mtime": "2026-06-09T06:35:59.288Z"
+    },
+    "D:/CODING/porto/src/data/portfolio.ts": {
+      "filePath": "D:\\CODING\\porto\\src\\data\\portfolio.ts",
+      "moduleName": "src/data/portfolio.ts",
+      "exports": [
+        "slugifyProjectTitle",
+        "Profile",
+        "Capability",
+        "LearningNote",
+        "FeaturedProject",
+        "getPortfolioData",
+        "getAllProjects"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-06-14T13:24:48.887Z"
+    }
+  },
+  "edges": [
+    {
+      "source": "D:\\CODING\\porto\\next-env.d.ts",
+      "target": "D:\\CODING\\porto\\.next\\types\\routes.d.ts",
+      "importSpecifier": "./.next/types/routes.d.ts",
+      "importType": "sideeffect"
+    },
+    {
+      "source": "D:\\CODING\\porto\\src\\app\\layout.tsx",
+      "target": "D:\\CODING\\porto\\src\\app\\globals.css",
+      "importSpecifier": "./globals.css",
+      "importType": "sideeffect"
+    },
+    {
+      "source": "D:\\CODING\\porto\\src\\components\\Navbar.tsx",
+      "target": "D:\\CODING\\porto\\src\\components\\LanguageSwitcher.tsx",
+      "importSpecifier": "./LanguageSwitcher",
+      "importType": "default"
+    },
+    {
+      "source": "D:\\CODING\\porto\\src\\components\\Navbar.tsx",
+      "target": "D:\\CODING\\porto\\src\\components\\LiveClock.tsx",
+      "importSpecifier": "./LiveClock",
+      "importType": "default"
+    },
+    {
+      "source": "D:\\CODING\\porto\\src\\components\\Navbar.tsx",
+      "target": "D:\\CODING\\porto\\src\\components\\ScrambleText.tsx",
+      "importSpecifier": "./ScrambleText",
+      "importType": "default"
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-06-15T01:39:01.049Z",
+    "generator": "repo-graph",
+    "nodeCount": 96,
+    "edgeCount": 5
+  }
+}

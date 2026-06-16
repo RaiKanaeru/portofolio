@@ -46,3 +46,6 @@ session-log.md
 
 # ── Vercel ───────────────────────────────────────────────
 .vercel
+
+# AI assistant artifacts
+context-snapshot.json
