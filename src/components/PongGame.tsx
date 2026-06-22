@@ -86,7 +86,7 @@ function playBeep(type: "hit" | "score", audioCtx: AudioContext | null) {
       osc.start(audioCtx.currentTime);
       osc.stop(audioCtx.currentTime + 0.3);
     }
-  } catch (e) {
+  } catch {
     // Ignore audio errors if blocked
   }
 }
@@ -155,7 +155,7 @@ export default function PongGame() {
         osc.start(ctx.currentTime);
         osc.stop(ctx.currentTime + 0.15);
         step++;
-      } catch(e) {}
+      } catch {}
     }, 300); // ~100 BPM
   }, []);
 
@@ -233,7 +233,7 @@ export default function PongGame() {
       ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
 
       // Grid
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.04)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
       ctx.lineWidth = 0.5;
       for (let x = 0; x < CANVAS_W; x += 40) {
         ctx.beginPath();
@@ -250,7 +250,7 @@ export default function PongGame() {
 
       // Center line
       ctx.setLineDash([6, 8]);
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.15)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(CANVAS_W / 2, 0);
@@ -356,14 +356,14 @@ export default function PongGame() {
       const isHitFlash = now - s.lastHitTime < 100;
 
       // Draw paddles
-      ctx.shadowColor = isHitFlash ? "#fff" : "#22d3ee";
+      ctx.shadowColor = isHitFlash ? "#fff" : "#2563eb";
       ctx.shadowBlur = isHitFlash ? 20 : 12;
-      ctx.fillStyle = isHitFlash ? "#fff" : "#22d3ee";
+      ctx.fillStyle = isHitFlash ? "#fff" : "#2563eb";
       ctx.fillRect(30, s.playerY, PADDLE_W, PADDLE_H);
 
-      ctx.shadowColor = isHitFlash ? "#fff" : "#ff0050";
+      ctx.shadowColor = isHitFlash ? "#fff" : "#a8550a";
       ctx.shadowBlur = isHitFlash ? 20 : 12;
-      ctx.fillStyle = isHitFlash ? "#fff" : "#ff0050";
+      ctx.fillStyle = isHitFlash ? "#fff" : "#a8550a";
       ctx.fillRect(CANVAS_W - 30 - PADDLE_W, s.aiY, PADDLE_W, PADDLE_H);
       ctx.shadowBlur = 0;
 
@@ -372,7 +372,7 @@ export default function PongGame() {
         trail.alpha -= 0.12;
         if (trail.alpha > 0) {
           ctx.beginPath();
-          ctx.fillStyle = `rgba(34, 211, 238, ${trail.alpha})`;
+          ctx.fillStyle = `rgba(255, 255, 255, ${trail.alpha})`;
           ctx.arc(trail.x, trail.y, BALL_SIZE * (1 - i * 0.1), 0, Math.PI * 2);
           ctx.fill();
         }
@@ -404,7 +404,7 @@ export default function PongGame() {
       // Score display
       ctx.font = "bold 48px monospace";
       ctx.textAlign = "center";
-      ctx.fillStyle = "rgba(34, 211, 238, 0.3)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
       ctx.fillText(String(s.playerScore), CANVAS_W / 2 - 80, 60);
       ctx.fillStyle = "rgba(255, 0, 80, 0.3)";
       ctx.fillText(String(s.aiScore), CANVAS_W / 2 + 80, 60);
@@ -413,7 +413,7 @@ export default function PongGame() {
       if (isPaused && !gameOver) {
         ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
         ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-        ctx.fillStyle = "#22d3ee";
+        ctx.fillStyle = "#2563eb";
         ctx.font = "bold 28px monospace";
         ctx.textAlign = "center";
         ctx.fillText("CLICK TO START", CANVAS_W / 2, CANVAS_H / 2 - 10);
@@ -425,7 +425,7 @@ export default function PongGame() {
       if (gameOver) {
         ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
         ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-        ctx.fillStyle = winner === "YOU" ? "#22d3ee" : "#ff0050";
+        ctx.fillStyle = winner === "YOU" ? "#2563eb" : "#a8550a";
         ctx.font = "bold 36px monospace";
         ctx.textAlign = "center";
         ctx.fillText(winner === "YOU" ? "YOU WIN!" : "AI WINS!", CANVAS_W / 2, CANVAS_H / 2 - 20);
@@ -468,8 +468,8 @@ export default function PongGame() {
               className={`px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] transition-all ${
                 difficulty === d
                   ? d === "HARD"
-                    ? "bg-[#ff0050] text-[var(--ink)] shadow-[0_0_12px_rgba(255,0,80,0.5)]"
-                    : "bg-[var(--accent-cyan)] text-black shadow-[0_0_12px_var(--accent-cyan)]"
+                    ? "bg-[var(--accent-gold)] text-[var(--surface)] shadow-[0_10px_24px_rgba(168,85,10,0.24)]"
+                    : "bg-[var(--ink)] text-[var(--surface)] shadow-[0_12px_28px_rgba(31,41,55,0.14)]"
                   : "text-[var(--dim)] hover:text-[var(--ink)]"
               }`}
             >
@@ -495,19 +495,19 @@ export default function PongGame() {
         </div>
         <span className="text-[var(--dim)] heading-font text-xl">VS</span>
         <div>
-          <p className="text-[10px] font-bold text-[#ff0050] tracking-[0.14em]">AI [{difficulty}]</p>
-          <p className="heading-font text-3xl font-bold text-[#ff0050]">{aiScore}</p>
+          <p className="text-[10px] font-bold text-[var(--accent-gold)] tracking-[0.14em]">AI [{difficulty}]</p>
+          <p className="heading-font text-3xl font-bold text-[var(--accent-gold)]">{aiScore}</p>
         </div>
       </div>
 
       {/* Canvas */}
-      <div className="relative border border-[var(--line)] shadow-[0_0_40px_rgba(34,211,238,0.08)]">
+      <div className="relative border border-[var(--line)] shadow-[0_0_40px_rgba(255,255,255,0.08)]">
         <canvas
           ref={canvasRef}
           width={CANVAS_W}
           height={CANVAS_H}
           onClick={handleCanvasClick}
-          className="block cursor-none max-w-full"
+          className="block max-w-full cursor-none touch-none"
           style={{ aspectRatio: `${CANVAS_W}/${CANVAS_H}` }}
         />
       </div>
@@ -519,3 +519,6 @@ export default function PongGame() {
     </div>
   );
 }
+
+
+

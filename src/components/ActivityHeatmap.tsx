@@ -6,17 +6,16 @@ export default function ActivityHeatmap() {
   // Generate 52 weeks × 7 days of pseudo-random activity
   const data = useMemo(() => {
     const grid: number[][] = [];
-    // Use a seed based on a fixed string for consistency
-    let seed = 42;
-    const random = () => {
-      seed = (seed * 16807) % 2147483647;
-      return (seed - 1) / 2147483646;
+    const pseudoRandom = (week: number, day: number) => {
+      const seed = (week + 1) * 73856093 ^ (day + 1) * 19349663;
+      const value = Math.sin(seed) * 10000;
+      return value - Math.floor(value);
     };
 
     for (let week = 0; week < 52; week++) {
       const days: number[] = [];
       for (let day = 0; day < 7; day++) {
-        const r = random();
+        const r = pseudoRandom(week, day);
         // More active in recent weeks
         const recency = week / 52;
         const threshold = 0.3 + recency * 0.3;
@@ -34,11 +33,11 @@ export default function ActivityHeatmap() {
   const getColor = (level: number) => {
     switch (level) {
       case 0: return "rgba(255, 255, 255, 0.03)";
-      case 1: return "rgba(34, 211, 238, 0.15)";
-      case 2: return "rgba(34, 211, 238, 0.3)";
-      case 3: return "rgba(34, 211, 238, 0.5)";
-      case 4: return "rgba(34, 211, 238, 0.75)";
-      default: return "rgba(34, 211, 238, 0.03)";
+      case 1: return "rgba(255, 255, 255, 0.12)";
+      case 2: return "rgba(255, 255, 255, 0.25)";
+      case 3: return "rgba(255, 255, 255, 0.4)";
+      case 4: return "rgba(255, 255, 255, 0.6)";
+      default: return "rgba(255, 255, 255, 0.03)";
     }
   };
 
@@ -97,3 +96,4 @@ export default function ActivityHeatmap() {
     </div>
   );
 }
+

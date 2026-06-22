@@ -22,7 +22,8 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setMobileOpen(false);
+    const frame = requestAnimationFrame(() => setMobileOpen(false));
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   const isActive = (href: string) => {
@@ -32,12 +33,13 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
 
   return (
     <header className="cyber-navbar">
-      <div className="mx-auto flex w-full max-w-[1296px] items-center justify-between px-5 py-5 md:px-10 xl:px-0">
-        <div className="flex items-center gap-4">
+      <div className="mx-auto flex w-full max-w-[1296px] items-center justify-between px-5 py-4 md:px-10 xl:px-0">
+        <div className="flex items-center gap-3 md:gap-4">
           <Link
-            className="text-sm font-bold tracking-[0.2em] uppercase text-[var(--ink)]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 text-sm font-bold uppercase tracking-[0.2em] text-[var(--ink)] transition-colors hover:border-[var(--accent-cyan)]"
             href="/"
           >
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-cyan)] shadow-[0_0_14px_rgba(255,255,255,0.5)]" />
             RA_
           </Link>
           <span className="hidden md:block h-4 w-[1px] bg-[var(--line)]" />
@@ -46,11 +48,12 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 text-[11px] font-bold tracking-[0.14em] uppercase lg:flex">
+        <nav className="hidden items-center gap-5 rounded-full border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 py-3 text-[11px] font-bold tracking-[0.14em] uppercase lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
+              data-active={isActive(link.href)}
               className={`nav-link transition-colors duration-200 ${
                 isActive(link.href)
                   ? "text-[var(--accent-cyan)]"
@@ -64,9 +67,11 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
 
         {/* Hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-[5px] p-2"
+          className="flex min-h-11 min-w-11 flex-col items-center justify-center gap-[5px] rounded-full border border-[var(--line-subtle)] bg-[var(--surface-soft)] p-2 transition-colors hover:border-[var(--accent-cyan)] lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
         >
           <span
             className={`block h-[2px] w-5 bg-[var(--ink)] transition-all duration-300 ${
@@ -88,16 +93,17 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-400 ${
+        id="mobile-navigation"
+        className={`overflow-hidden transition-[max-height,border-color,background-color] duration-300 lg:hidden ${
           mobileOpen ? "max-h-[500px] border-t border-[var(--line)]" : "max-h-0"
         }`}
       >
-        <nav className="mx-auto max-w-[1296px] px-5 py-4 md:px-10 flex flex-col gap-1">
+        <nav className="mx-auto flex max-w-[1296px] flex-col gap-2 px-5 py-4 md:px-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`py-3 px-4 text-[12px] font-bold uppercase tracking-[0.18em] transition-colors border-l-2 ${
+              className={`min-h-11 border-l-2 px-4 py-3 text-[12px] font-bold uppercase tracking-[0.18em] transition-colors ${
                 isActive(link.href)
                   ? "border-[var(--accent-cyan)] text-[var(--accent-cyan)] bg-[var(--glow)]"
                   : "border-transparent text-[var(--dim)] hover:text-[var(--ink)] hover:border-[var(--line)]"

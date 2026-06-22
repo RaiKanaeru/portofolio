@@ -1,4 +1,5 @@
-﻿# Pencil Design Refinement Plan
+> Current direction note (2026-06-19): This older planning document is now archived/superseded for visual direction. Use `docs/DESIGN.md` and `docs/DESIGN_HANDOFF.md` as the active source of truth: Dark Xyrionex-inspired technical editorial, black/navy canvas, dark rounded cards, bright text, restrained blue accent, soft 3D, no bright cream dominant theme.
+# Pencil Design Refinement Plan
 
 Dokumen ini adalah arahan lanjutan setelah workflow portfolio dipindahkan dari Stitch ke Pencil. Fokus final tetap **Warm Editorial Engineer**: profesional, terang, hangat, editorial, recruiter-friendly, dan tetap punya detail engineering.
 
@@ -333,3 +334,4 @@ Design homepage desktop first. Use root-level or flex-safe layout to avoid clipp
 - Gitfolio: minimal Next.js/Tailwind developer portfolio baseline.
 - Next.js portfolio templates: common structure for hero/about/skills/projects/contact.
 - Editorial portfolio inspiration: numbered case studies, strong typography, whitespace, archive-style layout.
+

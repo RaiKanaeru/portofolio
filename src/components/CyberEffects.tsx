@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
+type WindowWithWebkitAudio = Window & typeof globalThis & {
+  webkitAudioContext?: typeof AudioContext;
+};
 import { usePathname } from "next/navigation";
 
 export default function CyberEffects() {
@@ -55,7 +59,9 @@ export default function CyberEffects() {
     const playHoverSound = () => {
       try {
         if (!audioCtx) {
-          audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+          const AudioContextConstructor = window.AudioContext || (window as WindowWithWebkitAudio).webkitAudioContext;
+          if (!AudioContextConstructor) return;
+          audioCtx = new AudioContextConstructor();
         }
         if (audioCtx.state === "suspended") {
           audioCtx.resume();
@@ -76,7 +82,7 @@ export default function CyberEffects() {
 
         osc.start();
         osc.stop(audioCtx.currentTime + 0.05);
-      } catch (err) {
+      } catch {
         // Ignore audio errors (e.g. strict autoplay policies)
       }
     };
@@ -127,7 +133,7 @@ export default function CyberEffects() {
           <div
             className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300 mix-blend-screen"
             style={{
-              background: `radial-gradient(800px circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(34, 211, 238, 0.04), transparent 40%)`
+              background: `radial-gradient(800px circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 255, 255, 0.03), transparent 40%)`
             }}
           />
           <div
@@ -139,3 +145,4 @@ export default function CyberEffects() {
     </>
   );
 }
+

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ScrollRevealTextProps {
   text: string;
@@ -39,22 +39,30 @@ export default function ScrollRevealText({ text, className = "", as: Tag = "p" }
     return () => observer.disconnect();
   }, [words.length]);
 
-  return (
-    <Tag ref={ref as any} className={className}>
-      {words.map((word, i) => (
-        <span
-          key={i}
-          style={{
-            opacity: i < visibleCount ? 1 : 0,
-            transform: i < visibleCount ? "translateY(0px)" : "translateY(8px)",
-            transition: "opacity 0.4s ease, transform 0.4s ease",
-            display: "inline-block",
-            whiteSpace: "pre",
-          }}
-        >
-          {word}{i < words.length - 1 ? " " : ""}
-        </span>
-      ))}
-    </Tag>
-  );
+  const setElementRef = useCallback((node: HTMLElement | null) => {
+    ref.current = node;
+  }, []);
+
+  const content = words.map((word, i) => (
+    <span
+      key={i}
+      style={{
+        opacity: i < visibleCount ? 1 : 0,
+        transform: i < visibleCount ? "translateY(0px)" : "translateY(8px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+        display: "inline-block",
+        whiteSpace: "pre",
+      }}
+    >
+      {word}{i < words.length - 1 ? " " : ""}
+    </span>
+  ));
+
+  if (Tag === "h1") return <h1 ref={setElementRef} className={className}>{content}</h1>;
+  if (Tag === "h2") return <h2 ref={setElementRef} className={className}>{content}</h2>;
+  if (Tag === "h3") return <h3 ref={setElementRef} className={className}>{content}</h3>;
+  if (Tag === "span") return <span ref={setElementRef} className={className}>{content}</span>;
+
+  return <p ref={setElementRef} className={className}>{content}</p>;
 }
+

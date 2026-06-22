@@ -1,4 +1,5 @@
-﻿# Rencana Pembuatan Website Portfolio Pribadi
+> Current direction note (2026-06-19): This older planning document is now archived/superseded for visual direction. Use `docs/DESIGN.md` and `docs/DESIGN_HANDOFF.md` as the active source of truth: Dark Xyrionex-inspired technical editorial, black/navy canvas, dark rounded cards, bright text, restrained blue accent, soft 3D, no bright cream dominant theme.
+# Rencana Pembuatan Website Portfolio Pribadi
 
 ## 1. Gambaran Umum
 
@@ -1354,5 +1355,6 @@ Referensi yang digunakan untuk memperkaya rancangan:
 - Cloudflare R2 documentation: S3-compatible object storage.
 - Redis documentation: cache and rate limiting use cases.
 - OWASP guidance: authentication, session handling, API security principles.
+
 
 

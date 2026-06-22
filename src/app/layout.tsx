@@ -9,6 +9,7 @@ import BackToTop from "@/components/BackToTop";
 import CommandPalette from "@/components/CommandPalette";
 import PageTransition from "@/components/PageTransition";
 import LoadingScreen from "@/components/LoadingScreen";
+import ScrollRevealOnView from "@/components/ScrollRevealOnView";
 
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -26,6 +27,13 @@ export const metadata: Metadata = {
   applicationName: "Raihan Ariansyah Portfolio",
   authors: [{ name: "Raihan Ariansyah", url: siteUrl }],
   creator: "Raihan Ariansyah",
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      "id-ID": siteUrl,
+      "en-US": siteUrl,
+    },
+  },
   keywords: [
     "Raihan Ariansyah",
     "Fullstack Developer",
@@ -68,10 +76,11 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const locale = localeCookie === "en" ? "en" : "id";
 
   return (
-    <html lang={locale} className="h-full antialiased">
-      <body className={`${jetbrains.variable} ${inter.variable} min-h-full flex flex-col`}>
+    <html lang={locale} className="h-full antialiased" suppressHydrationWarning>
+      <body className={`${jetbrains.variable} ${inter.variable} min-h-full flex flex-col`} suppressHydrationWarning>
         <div className="cyber-shell relative min-h-screen flex flex-col bg-[var(--canvas)]">
           <LoadingScreen />
+          <ScrollRevealOnView />
           <ScrollProgress />
           <Navbar locale={locale} />
           <main className="relative z-[2] flex-1">
@@ -85,3 +94,4 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     </html>
   );
 }
+

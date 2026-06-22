@@ -1,4 +1,5 @@
-﻿# Catatan Workflow Google Stitch Untuk Portfolio
+> Current direction note (2026-06-19): This older planning document is now archived/superseded for visual direction. Use `docs/DESIGN.md` and `docs/DESIGN_HANDOFF.md` as the active source of truth: Dark Xyrionex-inspired technical editorial, black/navy canvas, dark rounded cards, bright text, restrained blue accent, soft 3D, no bright cream dominant theme.
+# Catatan Workflow Google Stitch Untuk Portfolio
 
 Dokumen ini merangkum pemahaman teknis dan alur kerja yang tepat untuk menggunakan Google Stitch dalam pembuatan desain website portfolio ini.
 
@@ -308,4 +309,5 @@ Tambahan berdasarkan dokumentasi Stitch:
 - Google Labs Blog: Real-time design with Stitch, including text, voice, existing codebase/design files, and shareable AI Studio links.
 - Google I/O related coverage: Stitch as AI-powered UI design tool for web and mobile app frontends.
 - Community reports: Stitch workflow commonly uses design export, Figma/code handoff, MCP/SDK integration, and iterative prompt refinement.
+
 

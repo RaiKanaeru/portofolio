@@ -1,6 +1,6 @@
 # Raihan Ariansyah — Portfolio
 
-Portfolio pribadi bertema **Dark Cyber / terminal** untuk Raihan Ariansyah — Fullstack Developer & Fresh Graduate Software Engineer (SMK Negeri 13 Bandung, RPL).
+Portfolio pribadi bertema **Dark Xyrionex-inspired Technical Editorial** untuk Raihan Ariansyah — Fullstack Developer & Fresh Graduate Software Engineer (SMK Negeri 13 Bandung, RPL).
 
 Dibangun dengan pendekatan **case-study**: tiap proyek ditulis sebagai problem → solution → result, bukan sekadar galeri screenshot. Dwibahasa (Indonesia / English).
 
@@ -54,7 +54,7 @@ src/
 │   ├── opengraph-image.tsx  # OG image dinamis untuk social share
 │   ├── sitemap.ts       # Sitemap
 │   └── robots.ts        # robots.txt
-├── components/          # Komponen UI (efek cyber, kartu, animasi)
+├── components/          # Komponen UI (light editorial, 3D accent, kartu, animasi)
 └── data/
     └── portfolio.ts     # Sumber data konten (ID/EN), fully typed
 
@@ -73,3 +73,5 @@ Dioptimalkan untuk **Vercel**. Header keamanan (CSP, HSTS, X-Frame-Options, dll)
 ---
 
 © 2026 Raihan Ariansyah. Bandung, Indonesia.
+
+

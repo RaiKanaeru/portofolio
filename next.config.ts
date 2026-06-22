@@ -1,5 +1,22 @@
 import type { NextConfig } from "next";
 
+const defaultDevOrigins = process.env.NODE_ENV === "development"
+  ? ["127.0.0.1", "localhost"]
+  : [];
+
+const devOrigins = [
+  ...defaultDevOrigins,
+  ...(process.env.NEXT_ALLOWED_DEV_ORIGINS ?? "").split(","),
+]
+  .map((origin) => origin.trim())
+  .filter(Boolean)
+  .filter((origin, index, origins) => origins.indexOf(origin) === index);
+
+const devConnectSources = devOrigins.flatMap((origin) => [
+  `http://${origin}:3000`,
+  `ws://${origin}:3000`,
+]);
+
 const securityHeaders = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -23,7 +40,13 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob:",
       "media-src 'self' data: blob:",
-      "connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com wss:",
+      [
+        "connect-src 'self'",
+        ...devConnectSources,
+        "https://cloudflareinsights.com",
+        "https://*.cloudflareinsights.com",
+        "wss:",
+      ].join(" "),
       "frame-src 'none'",
     ].join("; "),
   },
@@ -33,6 +56,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
+  ...(devOrigins.length > 0 ? { allowedDevOrigins: devOrigins } : {}),
 
   // Image optimization
   images: {

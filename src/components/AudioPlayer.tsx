@@ -2,8 +2,13 @@
 
 import { useRef, useState, useCallback, useEffect } from "react";
 
+type WindowWithWebkitAudio = Window & typeof globalThis & {
+  webkitAudioContext?: typeof AudioContext;
+};
+
 function setupDeepSpaceDrone(ctx: AudioContext) {
   const master = ctx.createGain();
+  const cleanupTasks: Array<() => void> = [];
   master.gain.value = 0.15; // Soft volume
 
   // Lowpass filter for deep space muffle
@@ -68,7 +73,7 @@ function setupDeepSpaceDrone(ctx: AudioContext) {
   });
 
   // Soft random sonar/chime ping for sci-fi atmosphere
-  setInterval(() => {
+  const sonarInterval = window.setInterval(() => {
     if (ctx.state !== "running") return;
     const osc = ctx.createOscillator();
     osc.type = "sine";
@@ -85,21 +90,27 @@ function setupDeepSpaceDrone(ctx: AudioContext) {
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 3.0);
   }, 4000); // Ping every 4 seconds
+  cleanupTasks.push(() => window.clearInterval(sonarInterval));
 
-  return master;
+  return () => {
+    cleanupTasks.forEach((cleanup) => cleanup());
+    master.disconnect();
+    filter.disconnect();
+  };
 }
 
 export default function AudioPlayer() {
   const [playing, setPlaying] = useState(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
+  const cleanupAudioRef = useRef<(() => void) | null>(null);
 
   const toggle = useCallback(() => {
     if (!audioCtxRef.current) {
-      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioContext) return;
-      const ctx = new AudioContext();
+      const AudioContextConstructor = window.AudioContext || (window as WindowWithWebkitAudio).webkitAudioContext;
+      if (!AudioContextConstructor) return;
+      const ctx = new AudioContextConstructor();
       audioCtxRef.current = ctx;
-      setupDeepSpaceDrone(ctx);
+      cleanupAudioRef.current = setupDeepSpaceDrone(ctx);
     }
 
     const ctx = audioCtxRef.current;
@@ -113,41 +124,13 @@ export default function AudioPlayer() {
   // Cleanup on unmount
   useEffect(() => {
     return () => {
+      cleanupAudioRef.current?.();
+      cleanupAudioRef.current = null;
       if (audioCtxRef.current && audioCtxRef.current.state !== "closed") {
         audioCtxRef.current.close();
       }
     };
   }, []);
-
-  // Autoplay attempt on mount, fallback to first interaction
-  useEffect(() => {
-    // 1. Attempt to auto-play immediately on page load
-    if (!audioCtxRef.current) {
-      toggle(); // Will work if browser allows autoplay
-    }
-
-    // 2. Fallback: If browser blocks autoplay, resume on first interaction
-    const handleFirstInteraction = () => {
-      if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume().then(() => setPlaying(true));
-      } else if (!audioCtxRef.current) {
-        toggle();
-      }
-      document.removeEventListener("click", handleFirstInteraction);
-      document.removeEventListener("keydown", handleFirstInteraction);
-      document.removeEventListener("scroll", handleFirstInteraction);
-    };
-
-    document.addEventListener("click", handleFirstInteraction);
-    document.addEventListener("keydown", handleFirstInteraction);
-    document.addEventListener("scroll", handleFirstInteraction, { once: true });
-
-    return () => {
-      document.removeEventListener("click", handleFirstInteraction);
-      document.removeEventListener("keydown", handleFirstInteraction);
-      document.removeEventListener("scroll", handleFirstInteraction);
-    };
-  }, [toggle]);
 
   return (
     <div className="audio-player-wrap">
@@ -178,3 +161,4 @@ export default function AudioPlayer() {
     </div>
   );
 }
+

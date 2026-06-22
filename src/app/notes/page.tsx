@@ -19,9 +19,9 @@ export default async function NotesPage() {
   return (
     <div className="container-page section-tight">
       {/* Header */}
-      <div className="cyber-reveal stack-header">
-        <p className="section-num"><ScrambleText text={data.ui.learning_records} /></p>
-        <h1 className="h1-display mt-4 max-w-2xl">
+      <div className="cyber-reveal route-hero stack-header">
+        <p className="meta-chip w-fit" data-tone="mono"><ScrambleText text={data.ui.learning_records} /></p>
+        <h1 className="h1-display mt-5 max-w-2xl">
           {data.ui.notes_title}
         </h1>
         <p className="lead-text mt-6">{data.ui.notes_desc}</p>
@@ -31,7 +31,7 @@ export default async function NotesPage() {
       <div className="grid gap-6 lg:grid-cols-3">
         {data.learningNotes.map((note: LearningNote, index: number) => (
           <TiltCard key={note.title}>
-            <article className="cyber-card spotlight-card p-7 cyber-reveal h-full transition duration-300 group">
+            <article className="dossier-card spotlight-card cyber-reveal h-full transition duration-300 group">
               <div className="flex items-center gap-3 mb-5">
                 <span className="heading-font text-3xl font-bold text-[var(--dim)] transition-colors group-hover:text-[var(--accent-cyan)]">0{index + 1}</span>
                 <span className="h-[1px] flex-1 bg-gradient-to-r from-[var(--accent-cyan)] to-transparent opacity-30 group-hover:opacity-100 transition-opacity" />
@@ -49,7 +49,7 @@ export default async function NotesPage() {
       {/* Philosophy Box */}
       <div className="cyber-reveal mt-16">
         <div className="terminal-card p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-4">// DEVELOPMENT_PHILOSOPHY</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-4">{"// DEVELOPMENT_PHILOSOPHY"}</p>
           <div className="font-mono text-[12px] text-[var(--muted)] space-y-2">
             <p><span className="text-[var(--accent-cyan)]">$</span> cat philosophy.md</p>
             <p className="pl-4 text-[var(--ink)]">

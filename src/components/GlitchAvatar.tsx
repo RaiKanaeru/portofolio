@@ -24,16 +24,17 @@ export default function GlitchAvatar() {
     let lastGlitch = 0;
 
     const draw = (time: number) => {
+      try {
       ctx.clearRect(0, 0, w, h);
 
       // Background frame
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.15)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
       ctx.lineWidth = 1;
       ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
 
       // Inner gradient bg
       const grad = ctx.createLinearGradient(0, 0, 0, h);
-      grad.addColorStop(0, "rgba(34, 211, 238, 0.03)");
+      grad.addColorStop(0, "rgba(255, 255, 255, 0.03)");
       grad.addColorStop(1, "rgba(0, 0, 0, 0)");
       ctx.fillStyle = grad;
       ctx.fillRect(1, 1, w - 2, h - 2);
@@ -52,9 +53,9 @@ export default function GlitchAvatar() {
       // Head circle
       ctx.beginPath();
       ctx.arc(cx, headY, headR, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(34, 211, 238, 0.08)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.06)";
       ctx.fill();
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.3)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
@@ -65,7 +66,7 @@ export default function GlitchAvatar() {
       ctx.lineTo(cx - 8, eyeY);
       ctx.moveTo(cx + 8, eyeY);
       ctx.lineTo(cx + 18, eyeY);
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.8)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.65)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -76,15 +77,15 @@ export default function GlitchAvatar() {
       ctx.lineTo(cx + 80, h - 30);
       ctx.lineTo(cx + 30, headY + headR + 10);
       ctx.closePath();
-      ctx.fillStyle = "rgba(34, 211, 238, 0.04)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.03)";
       ctx.fill();
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.15)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
       // ID data overlay
       ctx.font = "bold 8px monospace";
-      ctx.fillStyle = "rgba(34, 211, 238, 0.4)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.32)";
       ctx.textAlign = "left";
       ctx.fillText("ID: RA-001", 12, h - 60);
       ctx.fillText("STATUS: ACTIVE", 12, h - 48);
@@ -94,7 +95,7 @@ export default function GlitchAvatar() {
       const now = new Date();
       const ts = now.toISOString().slice(11, 19);
       ctx.textAlign = "right";
-      ctx.fillStyle = "rgba(34, 211, 238, 0.25)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
       ctx.fillText(ts, w - 12, h - 12);
 
       // Glitch effect every ~2 seconds
@@ -117,14 +118,14 @@ export default function GlitchAvatar() {
         ctx.globalCompositeOperation = "screen";
         ctx.fillStyle = "rgba(255, 0, 0, 0.08)";
         ctx.fillRect(0, Math.random() * h, w, 2 + Math.random() * 4);
-        ctx.fillStyle = "rgba(34, 211, 238, 0.08)";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.06)";
         ctx.fillRect(0, Math.random() * h, w, 2 + Math.random() * 4);
         ctx.globalCompositeOperation = "source-over";
       }
 
       // Corner brackets
       const bLen = 15;
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.3)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
       ctx.lineWidth = 1;
       // Top-left
       ctx.beginPath();
@@ -144,7 +145,10 @@ export default function GlitchAvatar() {
       ctx.stroke();
 
       animRef.current = requestAnimationFrame(draw);
-    };
+    } catch (e) {
+      console.error("Glitch avatar animation error:", e);
+    }
+  };
 
     animRef.current = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(animRef.current);
@@ -165,3 +169,4 @@ export default function GlitchAvatar() {
     </div>
   );
 }
+

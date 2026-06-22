@@ -5,6 +5,19 @@ import RobotMascot from "@/components/RobotMascot";
 
 type Phase = "boot" | "system" | "entering" | "waving" | "ready";
 
+const INTRO_SEEN_KEY = "ra_intro_seen";
+const FAILSAFE_TIMEOUT_MS = 5200;
+const DISMISS_TRANSITION_MS = 620;
+const READY_HOLD_MS = 1050;
+
+function markIntroSeen() {
+  try {
+    sessionStorage.setItem(INTRO_SEEN_KEY, "1");
+  } catch {
+    // abaikan bila sessionStorage tidak tersedia
+  }
+}
+
 export default function LoadingScreen() {
   const [phase, setPhase] = useState<Phase>("boot");
   const [progress, setProgress] = useState(0);
@@ -16,15 +29,27 @@ export default function LoadingScreen() {
   // Tampilkan intro hanya sekali per sesi browser. Mencegah robot + wave
   // muncul ulang tiap reload halaman (mis. saat ganti bahasa).
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem("ra_intro_seen") === "1") {
-        setSkipIntro(true);
-        setVisible(false);
-        setMounted(false);
+    const frame = requestAnimationFrame(() => {
+      try {
+        if (sessionStorage.getItem(INTRO_SEEN_KEY) === "1") {
+          setSkipIntro(true);
+          setVisible(false);
+          setMounted(false);
+        }
+      } catch {
+        // sessionStorage tidak tersedia: tetap tampilkan intro
       }
-    } catch {
-      // sessionStorage tidak tersedia: tetap tampilkan intro
-    }
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+
+  const dismissIntro = useCallback(() => {
+    setPhase("ready");
+    setVisible(false);
+    markIntroSeen();
+    window.setTimeout(() => setMounted(false), DISMISS_TRANSITION_MS);
   }, []);
 
   useEffect(() => {
@@ -49,6 +74,18 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     if (skipIntro) return;
+
+    const failsafe = window.setTimeout(() => {
+      setProgress(100);
+      updateStatus(100);
+      dismissIntro();
+    }, FAILSAFE_TIMEOUT_MS);
+
+    return () => window.clearTimeout(failsafe);
+  }, [dismissIntro, skipIntro, updateStatus]);
+
+  useEffect(() => {
+    if (skipIntro) return;
     let frame: number;
     let start: number | null = null;
     let currentProgress = 0;
@@ -69,16 +106,7 @@ export default function LoadingScreen() {
         if (p < 100) {
           frame = requestAnimationFrame(animateFinish);
         } else {
-          setTimeout(() => {
-            setPhase("ready");
-            setVisible(false);
-            try {
-              sessionStorage.setItem("ra_intro_seen", "1");
-            } catch {
-              // abaikan bila sessionStorage tidak tersedia
-            }
-            setTimeout(() => setMounted(false), 620);
-          }, 1050);
+          window.setTimeout(dismissIntro, READY_HOLD_MS);
         }
       };
       frame = requestAnimationFrame(animateFinish);
@@ -127,7 +155,7 @@ export default function LoadingScreen() {
       cancelAnimationFrame(frame);
       window.removeEventListener("load", finishLoading);
     };
-  }, [updateStatus, skipIntro]);
+  }, [dismissIntro, updateStatus, skipIntro]);
 
   if (!mounted) return null;
 
@@ -195,9 +223,9 @@ export default function LoadingScreen() {
           position: relative;
           width: min(620px, 82vw);
           height: min(520px, 74vh);
-          border: 1px solid rgba(34, 211, 238, 0.32);
+          border: 1px solid rgba(255, 255, 255, 0.32);
           background: rgba(5, 5, 5, 0.62);
-          box-shadow: 0 0 40px rgba(34, 211, 238, 0.08), inset 0 0 48px rgba(34, 211, 238, 0.025);
+          box-shadow: 0 0 40px rgba(255, 255, 255, 0.08), inset 0 0 48px rgba(255, 255, 255, 0.025);
           display: grid;
           place-items: center;
           overflow: hidden;
@@ -219,20 +247,20 @@ export default function LoadingScreen() {
           font-size: 11px;
           line-height: 1.65;
           letter-spacing: 0.08em;
-          color: rgba(34, 211, 238, 0.58);
+          color: rgba(255, 255, 255, 0.58);
         }
 
         .robot-stage {
           position: absolute;
           width: clamp(190px, 27vw, 250px);
-          filter: drop-shadow(0 0 14px rgba(34, 211, 238, 0.46));
+          filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.46));
           transition: opacity 520ms ease, transform 680ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .robot-stage__scan-ring {
           position: absolute;
           inset: 8%;
-          border: 1px solid rgba(34, 211, 238, 0.18);
+          border: 1px solid rgba(255, 255, 255, 0.18);
           border-radius: 999px;
           opacity: 0;
           transform: scale(0.9);
@@ -254,9 +282,9 @@ export default function LoadingScreen() {
 
         .robot-stage .robot-mascot__base,
         .robot-stage .robot-mascot__line {
-          stroke: #22d3ee;
+          stroke: #2563eb;
           stroke-width: 2.2;
-          fill: rgba(34, 211, 238, 0.035);
+          fill: rgba(255, 255, 255, 0.035);
           stroke-linecap: round;
           stroke-linejoin: round;
         }
@@ -335,12 +363,12 @@ export default function LoadingScreen() {
 
         .system-panel__label {
           padding: 14px 34px;
-          border-left: 1px solid rgba(34, 211, 238, 0.75);
-          border-right: 1px solid rgba(34, 211, 238, 0.75);
-          color: #22d3ee;
+          border-left: 1px solid rgba(255, 255, 255, 0.75);
+          border-right: 1px solid rgba(255, 255, 255, 0.75);
+          color: #2563eb;
           font-size: clamp(15px, 2vw, 22px);
           letter-spacing: 0.06em;
-          text-shadow: 0 0 16px rgba(34, 211, 238, 0.5);
+          text-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
         }
 
         .system-panel__progress {
@@ -354,8 +382,8 @@ export default function LoadingScreen() {
         .system-panel__progress span {
           display: block;
           height: 100%;
-          background: linear-gradient(90deg, #22d3ee, #f0f0f0);
-          box-shadow: 0 0 12px rgba(34, 211, 238, 0.65);
+          background: linear-gradient(90deg, #2563eb, #f0f0f0);
+          box-shadow: 0 0 12px rgba(255, 255, 255, 0.65);
           transition: width 150ms linear;
         }
 
@@ -365,12 +393,12 @@ export default function LoadingScreen() {
           margin-top: 10px;
           font-size: 9px;
           letter-spacing: 0.15em;
-          color: #52525b;
+          color: #a8b1c2;
           text-transform: uppercase;
         }
 
         .system-panel__status span:first-child {
-          color: #6b6b76;
+          color: #c0c8d6;
           letter-spacing: 0.4em;
         }
 
@@ -392,8 +420,8 @@ export default function LoadingScreen() {
           position: absolute;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.75));
-          box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75));
+          box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         }
 
         .motion-lines span:nth-child(1) { top: 22px; width: 150px; }
@@ -436,3 +464,8 @@ export default function LoadingScreen() {
     </div>
   );
 }
+
+
+
+
+

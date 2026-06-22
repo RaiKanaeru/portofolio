@@ -6,6 +6,8 @@ export default function DigitalRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -65,8 +67,10 @@ export default function DigitalRain() {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       className="absolute inset-0 z-0 h-full w-full pointer-events-none"
       style={{ opacity: 0.6, mixBlendMode: "screen" }}
     />
   );
 }
+

@@ -15,19 +15,14 @@ export default function ScrambleText({ text, className = "", as: Component = "sp
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    if (!isHovered) {
-      setDisplayText(text);
-      return;
-    }
+    if (!isHovered) return;
 
     let iteration = 0;
-    let interval: NodeJS.Timeout;
-
-    interval = setInterval(() => {
-      setDisplayText((prev) =>
+    const interval = setInterval(() => {
+      setDisplayText(
         text
           .split("")
-          .map((letter, index) => {
+          .map((_letter, index) => {
             if (index < iteration) {
               return text[index];
             }
@@ -49,9 +44,10 @@ export default function ScrambleText({ text, className = "", as: Component = "sp
     <Component
       className={className}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => { setIsHovered(false); setDisplayText(text); }}
     >
       {displayText}
     </Component>
   );
 }
+

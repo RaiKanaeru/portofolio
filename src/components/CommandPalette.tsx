@@ -63,6 +63,8 @@ export default function CommandPalette() {
         e.preventDefault();
         setSelectedIndex((i) => Math.max(i - 1, 0));
       } else if (e.key === "Enter" && filtered[selectedIndex]) {
+        e.preventDefault();
+        e.stopPropagation();
         handleNavigate(filtered[selectedIndex].href);
       }
     };
@@ -71,7 +73,8 @@ export default function CommandPalette() {
   }, [open, filtered, selectedIndex, handleNavigate]);
 
   useEffect(() => {
-    setSelectedIndex(0);
+    const frame = requestAnimationFrame(() => setSelectedIndex(0));
+    return () => cancelAnimationFrame(frame);
   }, [query]);
 
   if (!open) return null;
@@ -86,7 +89,7 @@ export default function CommandPalette() {
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-[560px] mx-4 border border-[var(--line)] bg-[var(--surface)] shadow-[0_0_60px_rgba(34,211,238,0.06)] animate-[page-fade-in_0.15s_ease-out]"
+        className="relative w-full max-w-[560px] mx-4 border border-[var(--line)] bg-[var(--surface)] shadow-[0_0_60px_rgba(255,255,255,0.06)] animate-[page-fade-in_0.15s_ease-out]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search */}
@@ -99,6 +102,12 @@ export default function CommandPalette() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            }}
             placeholder="Search pages, projects..."
             className="flex-1 bg-transparent text-[var(--ink)] text-sm font-bold outline-none placeholder:text-[var(--dim)]"
             autoFocus
@@ -107,7 +116,7 @@ export default function CommandPalette() {
         </div>
 
         {/* Results */}
-        <div className="max-h-[320px] overflow-y-auto py-2">
+        <div className="max-h-[320px] overflow-y-auto overscroll-contain py-2">
           {filtered.length === 0 ? (
             <p className="px-5 py-6 text-center text-[12px] font-bold text-[var(--dim)]">No results found.</p>
           ) : (
@@ -117,14 +126,14 @@ export default function CommandPalette() {
                 onClick={() => handleNavigate(action.href)}
                 className={`w-full flex items-center justify-between px-5 py-3 text-left transition-colors ${
                   i === selectedIndex
-                    ? "bg-[rgba(34,211,238,0.06)] text-[var(--accent-cyan)]"
+                    ? "bg-[rgba(255,255,255,0.04)] text-[var(--accent-cyan)]"
                     : "text-[var(--muted)] hover:bg-[rgba(255,255,255,0.03)] hover:text-[var(--ink)]"
                 }`}
               >
                 <span className="text-sm font-bold">{action.label}</span>
                 <span className={`text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 border ${
                   action.tag === "GAME"
-                    ? "border-[#ff0050] text-[#ff0050]"
+                    ? "border-[var(--accent-gold)] text-[var(--accent-gold)]"
                     : action.tag === "PROJECT"
                       ? "border-[var(--accent-cyan)] text-[var(--accent-cyan)]"
                       : "border-[var(--line)] text-[var(--dim)]"
@@ -148,3 +157,5 @@ export default function CommandPalette() {
     </div>
   );
 }
+
+

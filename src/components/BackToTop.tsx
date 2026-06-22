@@ -20,8 +20,8 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      aria-label="Back to top"
-      className={`fixed bottom-8 right-8 z-[100] h-11 w-11 flex items-center justify-center border border-[var(--line)] bg-[var(--surface)] text-[var(--accent-cyan)] transition-all duration-300 hover:border-[var(--accent-cyan)] hover:shadow-[0_0_16px_rgba(34,211,238,0.15)] ${
+      aria-label="Kembali ke atas"
+      className={`fixed bottom-8 right-8 z-[100] h-11 w-11 flex items-center justify-center border border-[var(--line)] bg-[var(--surface)] text-[var(--accent-cyan)] transition-all duration-300 hover:border-[var(--accent-cyan)] hover:shadow-[0_0_16px_rgba(255,255,255,0.12)] ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
@@ -31,3 +31,4 @@ export default function BackToTop() {
     </button>
   );
 }
+

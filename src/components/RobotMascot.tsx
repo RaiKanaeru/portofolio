@@ -26,13 +26,13 @@ export default function RobotMascot({ variant = "idle", className = "", style }:
             </feMerge>
           </filter>
           <radialGradient id={faceGlowId} cx="50%" cy="50%" r="60%">
-            <stop offset="0%" stopColor="rgba(34, 211, 238, 0.18)" />
-            <stop offset="60%" stopColor="rgba(34, 211, 238, 0.05)" />
-            <stop offset="100%" stopColor="rgba(34, 211, 238, 0)" />
+            <stop offset="0%" stopColor="rgba(255, 255, 255, 0.18)" />
+            <stop offset="60%" stopColor="rgba(255, 255, 255, 0.05)" />
+            <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
           </radialGradient>
           <linearGradient id={bodyGlowId} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(34, 211, 238, 0.09)" />
-            <stop offset="100%" stopColor="rgba(34, 211, 238, 0.015)" />
+            <stop offset="0%" stopColor="rgba(255, 255, 255, 0.09)" />
+            <stop offset="100%" stopColor="rgba(255, 255, 255, 0.015)" />
           </linearGradient>
         </defs>
 
@@ -64,3 +64,4 @@ export default function RobotMascot({ variant = "idle", className = "", style }:
     </div>
   );
 }
+

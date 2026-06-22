@@ -6,6 +6,7 @@ export default function TiltCard({ children, className = "" }: { children: React
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const card = cardRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();
@@ -35,3 +36,4 @@ export default function TiltCard({ children, className = "" }: { children: React
     </div>
   );
 }
+

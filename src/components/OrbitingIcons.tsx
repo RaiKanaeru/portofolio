@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const words = [
   "FULLSTACK", "DEVELOPER", "BACKEND", "MOBILE", "IoT",
@@ -10,7 +10,6 @@ const words = [
 
 export default function OrbitingIcons() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [hovered, setHovered] = useState(false);
   const animRef = useRef<number>(0);
 
   useEffect(() => {
@@ -31,6 +30,7 @@ export default function OrbitingIcons() {
     const cy = size / 2;
 
     const draw = (time: number) => {
+      try {
       ctx.clearRect(0, 0, size, size);
 
       // Draw orbits
@@ -38,7 +38,7 @@ export default function OrbitingIcons() {
       orbits.forEach((r) => {
         ctx.beginPath();
         ctx.arc(cx, cy, r, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(34, 211, 238, 0.06)";
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.06)";
         ctx.lineWidth = 1;
         ctx.stroke();
       });
@@ -46,11 +46,11 @@ export default function OrbitingIcons() {
       // Center dot
       ctx.beginPath();
       ctx.arc(cx, cy, 4, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(34, 211, 238, 0.8)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
       ctx.fill();
       ctx.beginPath();
       ctx.arc(cx, cy, 8, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.2)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
       ctx.lineWidth = 1;
       ctx.stroke();
 
@@ -68,14 +68,14 @@ export default function OrbitingIcons() {
         // Glow dot
         ctx.beginPath();
         ctx.arc(x, y, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(34, 211, 238, 0.6)";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
         ctx.fill();
 
         // Connection line to center (very faint)
         ctx.beginPath();
         ctx.moveTo(cx, cy);
         ctx.lineTo(x, y);
-        ctx.strokeStyle = "rgba(34, 211, 238, 0.03)";
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.03)";
         ctx.lineWidth = 1;
         ctx.stroke();
 
@@ -89,6 +89,9 @@ export default function OrbitingIcons() {
         ctx.restore();
       });
 
+      } catch (e) {
+        console.error("Orbit animation error:", e);
+      }
       animRef.current = requestAnimationFrame(draw);
     };
 
@@ -99,8 +102,8 @@ export default function OrbitingIcons() {
   return (
     <div
       className="relative flex items-center justify-center"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      
+      
     >
       <canvas
         ref={canvasRef}
@@ -115,3 +118,4 @@ export default function OrbitingIcons() {
     </div>
   );
 }
+

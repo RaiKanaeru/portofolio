@@ -49,3 +49,4 @@ export default function AnimatedCounter({ target, label }: { target: number; lab
     </div>
   );
 }
+

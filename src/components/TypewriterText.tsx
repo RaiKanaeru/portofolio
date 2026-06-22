@@ -37,3 +37,4 @@ export default function TypewriterText({ text, delay = 0, speed = 30 }: Typewrit
     </>
   );
 }
+

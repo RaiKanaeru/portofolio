@@ -28,7 +28,7 @@ export default async function OpengraphImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(34,211,238,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.06) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
             display: "flex",
           }}
@@ -40,19 +40,19 @@ export default async function OpengraphImage() {
             style={{
               width: "10px",
               height: "10px",
-              background: "#22d3ee",
-              boxShadow: "0 0 16px #22d3ee",
+              background: "#2563eb",
+              boxShadow: "0 0 16px #2563eb",
             }}
           />
           <div
             style={{
-              color: "#22d3ee",
+              color: "#2563eb",
               fontSize: "22px",
               letterSpacing: "6px",
               fontWeight: 700,
             }}
           >
-            // OPEN_TO_WORK
+            {"// OPEN_TO_WORK"}
           </div>
         </div>
 
@@ -96,7 +96,7 @@ export default async function OpengraphImage() {
           <div style={{ color: "#7d7d87", fontSize: "22px", letterSpacing: "3px", display: "flex" }}>
             BANDUNG, INDONESIA
           </div>
-          <div style={{ color: "#22d3ee", fontSize: "22px", letterSpacing: "3px", display: "flex" }}>
+          <div style={{ color: "#2563eb", fontSize: "22px", letterSpacing: "3px", display: "flex" }}>
             WEB // BACKEND // MOBILE // IOT
           </div>
         </div>
@@ -105,3 +105,4 @@ export default async function OpengraphImage() {
     { ...size }
   );
 }
+

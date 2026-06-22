@@ -9,7 +9,7 @@ export default function NotFound() {
           <h1
             className="heading-font text-[120px] md:text-[200px] font-bold leading-none text-transparent"
             style={{
-              WebkitTextStroke: "1px rgba(34, 211, 238, 0.3)",
+              WebkitTextStroke: "1px rgba(255, 255, 255, 0.3)",
             }}
           >
             404
@@ -17,14 +17,14 @@ export default function NotFound() {
           <h1
             className="heading-font text-[120px] md:text-[200px] font-bold leading-none absolute inset-0"
             data-text="404"
-            style={{ color: "rgba(34, 211, 238, 0.15)" }}
+            style={{ color: "rgba(255, 255, 255, 0.15)" }}
           >
             404
           </h1>
         </div>
 
         {/* Terminal error message */}
-        <div className="terminal-card p-6 md:p-8 max-w-lg w-full mb-10">
+        <div className="dossier-panel max-w-lg w-full mb-10 p-6 md:p-8">
           <div className="font-mono text-[12px] text-left space-y-2">
             <p><span className="text-[var(--accent-cyan)]">$</span> navigate --to /unknown</p>
             <p className="text-red-400">ERROR: Route not found in filesystem</p>

@@ -38,9 +38,9 @@ export default async function AboutPage() {
   return (
     <div className="container-page section-tight">
       {/* Page Header */}
-      <div className="cyber-reveal stack-header">
-        <p className="section-num"><ScrambleText text={data.ui.profile_brief} /></p>
-        <h1 className="h1-display mt-4 max-w-3xl">
+      <div className="cyber-reveal route-hero stack-header">
+        <p className="meta-chip w-fit" data-tone="mono"><ScrambleText text={data.ui.profile_brief} /></p>
+        <h1 className="h1-display mt-5 max-w-3xl">
           {data.ui.hero_title}
         </h1>
         <ScrollRevealText text={data.ui.hero_desc} className="lead-text mt-6 max-w-4xl" />
@@ -93,7 +93,7 @@ export default async function AboutPage() {
                   <span className="text-[10px] font-bold text-[var(--dim)]">SYS_0{index + 1}</span>
                 </div>
                 <p className="mt-4 text-[11px] font-bold text-[var(--muted)]">{item.meta}</p>
-                <div className="mt-5 h-[1px] bg-gradient-to-r from-[var(--line)] via-[rgba(34,211,238,0.12)] to-transparent" />
+                <div className="mt-5 h-[1px] bg-gradient-to-r from-[var(--line)] via-[rgba(255,255,255,0.12)] to-transparent" />
               </article>
             ))}
           </div>
@@ -109,7 +109,7 @@ export default async function AboutPage() {
       <div className="cyber-reveal mb-20">
         <div className="terminal-card p-6 md:p-8">
           <div className="flex items-center justify-between mb-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">// ACTIVITY_LOG</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">{"// ACTIVITY_LOG"}</p>
             <p className="text-[10px] font-bold text-[var(--dim)]">1,245 COMMITS (THIS YEAR)</p>
           </div>
           <ActivityHeatmap />

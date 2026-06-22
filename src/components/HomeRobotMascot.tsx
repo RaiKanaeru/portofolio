@@ -32,13 +32,13 @@ export default function HomeRobotMascot() {
           z-index: 3;
           width: clamp(158px, 11vw, 188px);
           pointer-events: none;
-          border: 1px solid rgba(34, 211, 238, 0.34);
+          border: 1px solid rgba(255, 255, 255, 0.34);
           background:
-            linear-gradient(135deg, rgba(34, 211, 238, 0.08), transparent 42%),
+            linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%),
             rgba(5, 5, 5, 0.58);
           box-shadow:
-            0 0 28px rgba(34, 211, 238, 0.08),
-            inset 0 0 24px rgba(34, 211, 238, 0.035);
+            0 0 28px rgba(255, 255, 255, 0.08),
+            inset 0 0 24px rgba(255, 255, 255, 0.035);
           backdrop-filter: blur(4px);
           opacity: 0.9;
           overflow: hidden;
@@ -50,7 +50,7 @@ export default function HomeRobotMascot() {
           position: absolute;
           width: 18px;
           height: 18px;
-          border-color: rgba(34, 211, 238, 0.72);
+          border-color: rgba(255, 255, 255, 0.72);
           pointer-events: none;
         }
 
@@ -88,21 +88,21 @@ export default function HomeRobotMascot() {
 
         .home-robot-dock__footer {
           border-top: 1px solid rgba(42, 42, 46, 0.9);
-          color: rgba(34, 211, 238, 0.62);
+          color: rgba(255, 255, 255, 0.62);
         }
 
         .home-robot-dock__status {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          color: rgba(34, 211, 238, 0.82);
+          color: rgba(255, 255, 255, 0.82);
         }
 
         .home-robot-dock__status i {
           width: 5px;
           height: 5px;
           background: var(--accent-cyan);
-          box-shadow: 0 0 10px rgba(34, 211, 238, 0.86);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.86);
           animation: dock-status-pulse 2.8s ease-in-out infinite;
         }
 
@@ -119,8 +119,8 @@ export default function HomeRobotMascot() {
           position: absolute;
           inset: 12px;
           background:
-            repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(34, 211, 238, 0.035) 7px, rgba(34, 211, 238, 0.035) 8px),
-            linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.08), transparent);
+            repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(255, 255, 255, 0.035) 7px, rgba(255, 255, 255, 0.035) 8px),
+            linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
           opacity: 0.55;
         }
 
@@ -129,7 +129,7 @@ export default function HomeRobotMascot() {
           width: 120px;
           height: 120px;
           border-radius: 999px;
-          background: radial-gradient(circle, rgba(34, 211, 238, 0.14), transparent 68%);
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 68%);
           filter: blur(2px);
         }
 
@@ -149,7 +149,7 @@ export default function HomeRobotMascot() {
         .home-robot-dock :global(.robot-mascot__base) {
           stroke: var(--accent-cyan);
           stroke-width: 2.2;
-          fill: rgba(34, 211, 238, 0.035);
+          fill: rgba(255, 255, 255, 0.035);
           stroke-linecap: round;
           stroke-linejoin: round;
         }
@@ -222,3 +222,4 @@ export default function HomeRobotMascot() {
     </aside>
   );
 }
+

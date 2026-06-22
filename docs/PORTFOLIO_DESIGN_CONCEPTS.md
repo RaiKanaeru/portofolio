@@ -1,4 +1,5 @@
-﻿# Konsep Desain Website Portfolio
+> Current direction note (2026-06-19): This older planning document is now archived/superseded for visual direction. Use `docs/DESIGN.md` and `docs/DESIGN_HANDOFF.md` as the active source of truth: Dark Xyrionex-inspired technical editorial, black/navy canvas, dark rounded cards, bright text, restrained blue accent, soft 3D, no bright cream dominant theme.
+# Konsep Desain Website Portfolio
 
 Dokumen ini berisi beberapa skema konsep desain yang bisa digunakan sebagai arahan awal sebelum membuat visual di Stitch, Figma, atau tool desain lain yang dikontrol melalui MCP.
 
@@ -813,4 +814,5 @@ Version 3: Soft Tech Bento Editorial
 ```
 
 Setelah dibandingkan, pilih satu desain utama lalu turunkan ke semua halaman.
+
 

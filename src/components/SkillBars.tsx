@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 
 const skills = [
   { name: "Laravel", level: 83, color: "#ff2d20" },
-  { name: "Next.js", level: 70, color: "#22d3ee" },
+  { name: "Next.js", level: 70, color: "#2563eb" },
   { name: "TypeScript", level: 68, color: "#3178c6" },
   { name: "Flutter", level: 75, color: "#027dfd" },
   { name: "Go", level: 55, color: "#00add8" },
   { name: "Firebase", level: 70, color: "#ffca28" },
   { name: "PostgreSQL", level: 55, color: "#336791" },
-  { name: "REST API", level: 72, color: "#22d3ee" },
+  { name: "REST API", level: 72, color: "#2563eb" },
   { name: "Git", level: 70, color: "#f05032" },
   { name: "ESP32/IoT", level: 45, color: "#e7352c" },
 ];
@@ -65,3 +65,4 @@ export default function SkillBars() {
     </div>
   );
 }
+

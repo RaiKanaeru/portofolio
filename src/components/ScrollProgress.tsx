@@ -22,9 +22,10 @@ export default function ScrollProgress() {
         className="h-full bg-[var(--accent-cyan)] transition-[width] duration-100 ease-out"
         style={{
           width: `${progress}%`,
-          boxShadow: "0 0 8px var(--accent-cyan), 0 0 20px rgba(34, 211, 238, 0.3)",
+          boxShadow: "0 0 8px var(--accent-cyan), 0 0 20px rgba(255, 255, 255, 0.3)",
         }}
       />
     </div>
   );
 }
+

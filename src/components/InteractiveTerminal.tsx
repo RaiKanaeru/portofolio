@@ -111,16 +111,20 @@ export default function InteractiveTerminal() {
     { type: "output", text: "" },
   ]);
   const [input, setInput] = useState("");
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const outputRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    const output = outputRef.current;
+    if (!output) return;
+
+    output.scrollTo({ top: output.scrollHeight, behavior: "smooth" });
   }, [lines]);
 
   const handleSubmit = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
+      e.stopPropagation();
       const cmd = input.trim().toLowerCase();
       const newLines: TermLine[] = [
         ...lines,
@@ -176,7 +180,7 @@ export default function InteractiveTerminal() {
       </div>
 
       {/* Terminal Output */}
-      <div className="flex-1 overflow-y-auto p-4 font-mono text-[12px] leading-6">
+      <div ref={outputRef} className="flex-1 overflow-y-auto overscroll-contain p-4 font-mono text-[12px] leading-6">
         {lines.map((line, i) => (
           <div
             key={i}
@@ -194,14 +198,18 @@ export default function InteractiveTerminal() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.stopPropagation();
+              }
+            }}
             className="flex-1 bg-transparent text-[var(--ink)] outline-none caret-[var(--accent-cyan)] font-mono text-[12px]"
-            autoFocus
             autoComplete="off"
             spellCheck={false}
           />
         </form>
-        <div ref={bottomRef} />
       </div>
     </div>
   );
 }
+

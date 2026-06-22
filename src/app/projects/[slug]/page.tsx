@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import Link from "next/link";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { getAllProjects, getPortfolioData } from "@/data/portfolio";
 
 type Props = {
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   return allProjects.map((project) => ({ slug: project.slug }));
 }
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const cookieStore = await cookies();
   const localeCookie = cookieStore.get("NEXT_LOCALE")?.value as "en" | "id" | undefined;
@@ -57,27 +57,27 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Nav */}
         <nav className="flex items-center justify-between gap-4">
           <Link
-            className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--muted)] hover:text-[var(--accent-cyan)] transition-colors"
+            className="meta-chip transition-colors hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]"
             href="/projects"
           >
             {data.ui.back_to_archive}
           </Link>
-          <span className="border border-[var(--line)] bg-[var(--surface)] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[var(--accent-cyan)]">
+          <span className="meta-chip" data-tone="mono">
             CASE_FILE_{project.number}
           </span>
         </nav>
 
         {/* Header */}
         <section className="mt-12 grid gap-6 lg:grid-cols-[1fr_340px]">
-          <div className="border border-[var(--line)] bg-[var(--surface)] p-7 md:p-9">
+          <div className="route-hero">
             <p className="heading-font text-6xl font-bold text-[var(--dim)]">{project.number}</p>
-            <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">{project.category}</p>
-            <h1 className="heading-font mt-5 text-4xl font-bold leading-tight md:text-6xl">{project.title}</h1>
+            <p className="meta-chip mt-6 w-fit" data-tone="mono">{project.category}</p>
+            <h1 className="heading-font mt-6 text-4xl font-bold leading-tight md:text-6xl">{project.title}</h1>
             <p className="mt-7 max-w-3xl text-sm leading-7 text-[var(--muted)]">{project.summary}</p>
           </div>
 
           {/* Metadata sidebar */}
-          <aside className="terminal-card p-6">
+          <aside className="dossier-panel p-6">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">{data.ui.project_meta}</p>
             <dl className="mt-6 space-y-4">
               {[
@@ -102,10 +102,10 @@ export default async function ProjectDetailPage({ params }: Props) {
             ["Solution", project.caseStudy.solution],
             ["Result", project.caseStudy.result],
           ].map(([title, body], index) => (
-            <div key={title} className="cyber-card spotlight-card p-6">
-              <p className="mb-4 text-[10px] font-bold text-[var(--dim)]">STEP_0{index + 1}</p>
-              <h2 className="text-base font-bold uppercase tracking-[0.1em] text-[var(--accent-cyan)]">{title}</h2>
-              <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{body}</p>
+            <div key={title} className="dossier-card spotlight-card">
+              <p className="meta-chip mb-5" data-tone={index === 1 ? "amber" : index === 2 ? "green" : "blue"}>STEP_0{index + 1}</p>
+              <h2 className="dossier-title text-base text-[var(--accent-cyan)]">{title}</h2>
+              <p className="dossier-copy mt-4">{body}</p>
             </div>
           ))}
         </section>
