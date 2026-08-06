@@ -12,9 +12,9 @@ const techs2 = [
 
 function MarqueeItem({ tech }: { tech: string }) {
   return (
-    <span className="mx-5 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--dim)] hover:text-[var(--accent-cyan)] transition-colors duration-300 cursor-default group">
+    <span className="marquee-item-glow mx-5 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--dim)] hover:text-[var(--accent-cyan)] transition-colors duration-300 cursor-default group">
       <span
-        className="h-1 w-1 rounded-full bg-[var(--dim)] group-hover:bg-[var(--accent-cyan)] group-hover:shadow-[0_0_6px_var(--accent-cyan)] transition-all duration-300"
+        className="h-1 w-1 rounded-none bg-[var(--dim)] group-hover:bg-[var(--accent-cyan)] group-hover:shadow-[0_0_6px_var(--accent-cyan)] transition-all duration-300"
         style={{ display: "inline-block" }}
       />
       {tech}
@@ -27,7 +27,7 @@ export default function TechMarquee() {
   const items2 = [...techs2, ...techs2, ...techs2];
 
   return (
-    <div className="relative overflow-hidden border-y border-[var(--line-subtle)] py-6 flex flex-col gap-6">
+    <div className="marquee-wrap relative overflow-hidden border-y border-[var(--line-subtle)] py-6 flex flex-col gap-6">
       {/* Gradient masks on edges */}
       <div
         className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"

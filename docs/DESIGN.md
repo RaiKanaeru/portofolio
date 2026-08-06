@@ -50,21 +50,20 @@ Dark navy canvas + translucent dark cards + bright technical typography + blue a
 - Project cards harus terasa seperti technical case files.
 - Arcade/robot boleh ada, tapi jangan mengubah keseluruhan website menjadi game UI.
 
-## Palette Final
+## Palette Final (v3 — Monochrome + Emerald Signal)
 
 ```txt
-Canvas:        #060914
-Surface:       #0D1322
-Card:          #111827
-Text primary:  #E8EEF8
-Text muted:    #AEB9CC
-Text soft:     #8390A6
-Line:          #263449
-Line subtle:   #1A2435
-Primary blue:  #60A5FA
-Blue glow:     rgba(96,165,250,0.16-0.42)
-Amber accent:  #F59E0B
-Amber soft:    rgba(245,158,11,0.10-0.18)
+Canvas:        #000000     (pure black)
+Surface:       #0a0a0a
+Card:          #0f0f0f
+Text primary:  #ffffff     (--ink)
+Text muted:    #a1a1aa     (zinc-400)
+Text dim:      #52525b     (zinc-600)
+Line:          #27272a     (zinc-800)
+Line subtle:   #18181b     (zinc-900)
+Accent:        #10b981     (emerald-500, mapped as --accent-cyan)
+Accent glow:   rgba(16, 185, 129, 0.15)
+Gold:          #ffffff     (remapped to white for monochrome)
 ```
 
 ## Accessibility Rules

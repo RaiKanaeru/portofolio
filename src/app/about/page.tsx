@@ -6,7 +6,7 @@ import TypewriterText from "@/components/TypewriterText";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
 import SkillBars from "@/components/SkillBars";
 import ActivityHeatmap from "@/components/ActivityHeatmap";
-import GlitchAvatar from "@/components/GlitchAvatar";
+import ProfilePhoto from "@/components/ProfilePhoto";
 import ScrollRevealText from "@/components/ScrollRevealText";
 
 export const metadata: Metadata = {
@@ -47,7 +47,7 @@ export default async function AboutPage() {
       </div>
 
       {/* Terminal Profile */}
-      <div className="cyber-reveal mb-20 grid gap-8 lg:grid-cols-[1fr_280px_400px]">
+      <div className="cyber-reveal mb-20 grid gap-8 lg:grid-cols-[1fr_280px_400px] [&>*]:min-w-0">
         <div className="space-y-6">
           <div className="cyber-card p-7">
             <p className="text-[10px] font-bold text-[var(--dim)] mb-4">PERSONAL_DATA</p>
@@ -72,10 +72,10 @@ export default async function AboutPage() {
         </div>
 
         <div className="hidden lg:flex items-center justify-center">
-          <GlitchAvatar />
+          <ProfilePhoto />
         </div>
 
-        <div className="relative">
+        <div className="relative min-w-0">
           <InteractiveTerminal />
         </div>
       </div>
@@ -130,7 +130,7 @@ export default async function AboutPage() {
             {timelineData.map((item, index) => (
               <div key={item.year} className={`cyber-reveal relative flex items-start gap-6 md:gap-0 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                 {/* Dot */}
-                <div className="absolute left-[12px] top-2 h-4 w-4 rounded-full border-2 border-[var(--accent-cyan)] bg-[var(--canvas)] z-10 md:left-1/2 md:-translate-x-1/2" />
+                <div className="absolute left-[12px] top-2 h-4 w-4 rounded-none border-2 border-[var(--accent-cyan)] bg-[var(--canvas)] z-10 md:left-1/2 md:-translate-x-1/2" />
 
                 {/* Content */}
                 <div className={`ml-12 md:ml-0 md:w-[calc(50%-40px)] ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>

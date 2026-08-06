@@ -40,12 +40,12 @@ export default function Footer() {
         <div>
           <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[var(--dim)] mb-4">NAVIGATION</p>
           <nav className="grid grid-cols-2 gap-2 text-[11px] font-bold uppercase tracking-[0.14em]">
-            <Link href="/" className="footer-micro-link py-1">HOME</Link>
-            <Link href="/about" className="footer-micro-link py-1">ABOUT</Link>
-            <Link href="/projects" className="footer-micro-link py-1">PROJECTS</Link>
-            <Link href="/notes" className="footer-micro-link py-1">NOTES</Link>
-            <Link href="/arcade" className="footer-micro-link py-1">ARCADE</Link>
-            <Link href="/contact" className="footer-micro-link py-1">CONTACT</Link>
+            <Link href="/" className="footer-micro-link flex min-h-11 items-center">HOME</Link>
+            <Link href="/about" className="footer-micro-link flex min-h-11 items-center">ABOUT</Link>
+            <Link href="/projects" className="footer-micro-link flex min-h-11 items-center">PROJECTS</Link>
+            <Link href="/notes" className="footer-micro-link flex min-h-11 items-center">NOTES</Link>
+            <Link href="/arcade" className="footer-micro-link flex min-h-11 items-center">ARCADE</Link>
+            <Link href="/contact" className="footer-micro-link flex min-h-11 items-center">CONTACT</Link>
           </nav>
         </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
       </div>
 
       {/* Gradient divider */}
-      <div className="h-[1px] bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent opacity-20" />
+      <div className="footer-divider-animated" />
 
       {/* Bottom bar */}
       <div className="mx-auto max-w-[1296px] px-5 py-5 md:px-10 xl:px-0 flex flex-col md:flex-row items-center justify-between gap-3">

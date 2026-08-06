@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const defaultDevOrigins = process.env.NODE_ENV === "development"
-  ? ["127.0.0.1", "localhost"]
+  ? ["127.0.0.1", "localhost", "host.docker.internal"]
   : [];
 
 const devOrigins = [

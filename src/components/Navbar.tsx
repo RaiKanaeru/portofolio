@@ -36,10 +36,10 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
       <div className="mx-auto flex w-full max-w-[1296px] items-center justify-between px-5 py-4 md:px-10 xl:px-0">
         <div className="flex items-center gap-3 md:gap-4">
           <Link
-            className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 text-sm font-bold uppercase tracking-[0.2em] text-[var(--ink)] transition-colors hover:border-[var(--accent-cyan)]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-none border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 text-sm font-bold uppercase tracking-[0.2em] text-[var(--ink)] transition-colors hover:border-[var(--accent-cyan)]"
             href="/"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-cyan)] shadow-[0_0_14px_rgba(255,255,255,0.5)]" />
+            <span className="h-1.5 w-1.5 rounded-none bg-[var(--accent-cyan)] shadow-[0_0_14px_rgba(255,255,255,0.5)]" />
             RA_
           </Link>
           <span className="hidden md:block h-4 w-[1px] bg-[var(--line)]" />
@@ -48,7 +48,7 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-5 rounded-full border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 py-3 text-[11px] font-bold tracking-[0.14em] uppercase lg:flex">
+        <nav className="hidden items-center gap-5 rounded-none border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 py-3 text-[11px] font-bold tracking-[0.14em] uppercase lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -67,7 +67,7 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
 
         {/* Hamburger */}
         <button
-          className="flex min-h-11 min-w-11 flex-col items-center justify-center gap-[5px] rounded-full border border-[var(--line-subtle)] bg-[var(--surface-soft)] p-2 transition-colors hover:border-[var(--accent-cyan)] lg:hidden"
+          className="flex min-h-11 min-w-11 flex-col items-center justify-center gap-[5px] rounded-none border border-[var(--line-subtle)] bg-[var(--surface-soft)] p-2 transition-colors hover:border-[var(--accent-cyan)] lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}

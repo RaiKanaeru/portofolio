@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PongGame from "@/components/PongGame";
+import PongGame from "@/components/PongGameLazy";
 import ScrambleText from "@/components/ScrambleText";
 
 export const metadata: Metadata = {

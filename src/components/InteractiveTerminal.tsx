@@ -171,9 +171,9 @@ export default function InteractiveTerminal() {
     >
       {/* Title Bar */}
       <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--line-subtle)]">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
+        <span className="h-2.5 w-2.5 rounded-none bg-[#ff5f56]" />
+        <span className="h-2.5 w-2.5 rounded-none bg-[#ffbd2e]" />
+        <span className="h-2.5 w-2.5 rounded-none bg-[#27c93f]" />
         <span className="ml-3 text-[10px] font-bold text-[var(--dim)] uppercase tracking-[0.14em]">
           raihan@portfolio: ~/about
         </span>

@@ -2,9 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-type WindowWithWebkitAudio = Window & typeof globalThis & {
-  webkitAudioContext?: typeof AudioContext;
-};
 import { usePathname } from "next/navigation";
 
 export default function CyberEffects() {
@@ -54,39 +51,6 @@ export default function CyberEffects() {
   }, [pathname]);
 
   useEffect(() => {
-    // Web Audio API setup for SFX
-    let audioCtx: AudioContext | null = null;
-    const playHoverSound = () => {
-      try {
-        if (!audioCtx) {
-          const AudioContextConstructor = window.AudioContext || (window as WindowWithWebkitAudio).webkitAudioContext;
-          if (!AudioContextConstructor) return;
-          audioCtx = new AudioContextConstructor();
-        }
-        if (audioCtx.state === "suspended") {
-          audioCtx.resume();
-        }
-
-        const osc = audioCtx.createOscillator();
-        const gainNode = audioCtx.createGain();
-
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(800, audioCtx.currentTime); // High pitch beep
-        osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.05);
-
-        gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Very quiet
-        gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-
-        osc.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.05);
-      } catch {
-        // Ignore audio errors (e.g. strict autoplay policies)
-      }
-    };
-
     // Mouse tracking for custom cursor and spotlight cards
     const handleMouseMove = (e: MouseEvent) => {
       setHasMouse(true);
@@ -95,12 +59,7 @@ export default function CyberEffects() {
       const target = e.target as HTMLElement;
       const isClickable = target.closest("a, button, .cursor-target") !== null;
       
-      setIsHovering((prev) => {
-        if (!prev && isClickable) {
-          playHoverSound();
-        }
-        return isClickable;
-      });
+      setIsHovering(isClickable);
 
       const cards = document.querySelectorAll(".spotlight-card") as NodeListOf<HTMLElement>;
       cards.forEach((card) => {

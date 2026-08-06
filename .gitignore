@@ -49,3 +49,43 @@ session-log.md
 
 # AI assistant artifacts
 context-snapshot.json
+
+# Graphify (local)
+graphify-out/
+.graphifyignore
+
+# Prompt templates (local)
+.prompts/*.prp.md
+
+# Opencode local settings & plugins
+.opencode/
+*.omo-disabled/
+
+# ── AI agent tool dirs (local tooling, not repo content) ──
+/.agent/
+/.agents/
+/.codebuddy/
+/.codex/
+/.continue/
+/.cursor/
+/.gemini/
+/.kiro/
+/.qoder/
+/.roo/
+/.trae/
+/.windsurf/
+/.stitch/
+/.omo/
+/.prompts/
+/.github/prompts/
+
+# Agent instruction files (local tooling)
+/AGENTS.md
+/CLAUDE.md
+/GEMINI.md
+
+# Playwright QA scripts (local)
+/pw-*.js
+
+# Design artifacts (local)
+/artifacts-porto-*.png

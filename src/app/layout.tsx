@@ -8,8 +8,10 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import CommandPalette from "@/components/CommandPalette";
 import PageTransition from "@/components/PageTransition";
-import LoadingScreen from "@/components/LoadingScreen";
 import ScrollRevealOnView from "@/components/ScrollRevealOnView";
+import CyberEffects from "@/components/CyberEffects";
+import ScrollKinetics from "@/components/ScrollKinetics";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -78,13 +80,17 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang={locale} className="h-full antialiased" suppressHydrationWarning>
       <body className={`${jetbrains.variable} ${inter.variable} min-h-full flex flex-col`} suppressHydrationWarning>
+        <a className="skip-link" href="#main-content">Lewati ke konten utama</a>
         <div className="cyber-shell relative min-h-screen flex flex-col bg-[var(--canvas)]">
-          <LoadingScreen />
           <ScrollRevealOnView />
+          <CyberEffects />
+          <ScrollKinetics />
           <ScrollProgress />
           <Navbar locale={locale} />
-          <main className="relative z-[2] flex-1">
-            <PageTransition>{children}</PageTransition>
+          <main id="main-content" className="relative z-[2] flex-1">
+            <SmoothScroll>
+              <PageTransition>{children}</PageTransition>
+            </SmoothScroll>
           </main>
           <Footer />
           <BackToTop />
