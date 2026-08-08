@@ -94,11 +94,12 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
       {/* Mobile Menu */}
       <div
         id="mobile-navigation"
-        className={`overflow-hidden transition-[max-height,border-color,background-color] duration-300 lg:hidden ${
-          mobileOpen ? "max-h-[500px] border-t border-[var(--line)]" : "max-h-0"
+        className={`grid transition-[grid-template-rows] duration-300 lg:hidden ${
+          mobileOpen ? "grid-rows-[1fr] border-t border-[var(--line)]" : "grid-rows-[0fr]"
         }`}
       >
-        <nav className="mx-auto flex max-w-[1296px] flex-col gap-2 px-5 py-4 md:px-10">
+        <div className="overflow-hidden">
+          <nav className="mx-auto flex max-w-[1296px] flex-col gap-2 px-5 py-4 md:px-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -113,6 +114,7 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
             </Link>
           ))}
         </nav>
+        </div>
       </div>
     </header>
   );

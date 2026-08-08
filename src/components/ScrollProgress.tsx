@@ -19,9 +19,9 @@ export default function ScrollProgress() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[999] h-[2px] bg-transparent">
       <div
-        className="h-full bg-[var(--accent-cyan)] transition-[width] duration-100 ease-out"
+        className="h-full w-full origin-left bg-[var(--accent-cyan)] transition-transform duration-100 ease-out"
         style={{
-          width: `${progress}%`,
+          transform: `scaleX(${progress / 100})`,
           boxShadow: "0 0 8px var(--accent-cyan), 0 0 20px rgba(255, 255, 255, 0.3)",
         }}
       />
