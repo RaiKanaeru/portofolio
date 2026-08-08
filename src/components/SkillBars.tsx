@@ -42,10 +42,10 @@ export default function SkillBars() {
       {skills.map((skill, i) => (
         <div key={skill.name} className="group">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--ink)]">
+            <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--ink)]">
               {skill.name}
             </span>
-            <span className="text-[10px] font-bold text-[var(--dim)] tabular-nums">
+            <span className="text-[12px] font-bold text-[var(--dim)] tabular-nums">
               {animated ? skill.level : 0}%
             </span>
           </div>

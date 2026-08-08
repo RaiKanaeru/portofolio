@@ -109,10 +109,10 @@ export default function CommandPalette() {
               }
             }}
             placeholder="Search pages, projects..."
-            className="flex-1 bg-transparent text-[var(--ink)] text-sm font-bold outline-none placeholder:text-[var(--dim)]"
+            className="min-h-11 flex-1 bg-transparent text-[var(--ink)] text-sm font-bold outline-none placeholder:text-[var(--dim)]"
             autoFocus
           />
-          <kbd className="text-[9px] font-bold text-[var(--dim)] border border-[var(--line-subtle)] px-1.5 py-0.5">ESC</kbd>
+          <kbd className="text-[11px] font-bold text-[var(--dim)] border border-[var(--line-subtle)] px-1.5 py-0.5">ESC</kbd>
         </div>
 
         {/* Results */}
@@ -131,7 +131,7 @@ export default function CommandPalette() {
                 }`}
               >
                 <span className="text-sm font-bold">{action.label}</span>
-                <span className={`text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 border ${
+                <span className={`text-[11px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 border ${
                   action.tag === "GAME"
                     ? "border-[var(--accent-gold)] text-[var(--accent-gold)]"
                     : action.tag === "PROJECT"
@@ -147,11 +147,11 @@ export default function CommandPalette() {
 
         {/* Footer */}
         <div className="flex items-center justify-between px-5 py-3 border-t border-[var(--line-subtle)]">
-          <div className="flex items-center gap-3 text-[9px] font-bold text-[var(--dim)]">
+          <div className="flex items-center gap-3 text-[11px] font-bold text-[var(--dim)]">
             <span>↑↓ Navigate</span>
             <span>↵ Open</span>
           </div>
-          <span className="text-[9px] font-bold text-[var(--dim)]">Ctrl+K to toggle</span>
+          <span className="text-[11px] font-bold text-[var(--dim)]">Ctrl+K to toggle</span>
         </div>
       </div>
     </div>

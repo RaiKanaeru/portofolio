@@ -38,8 +38,8 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[var(--dim)] mb-4">NAVIGATION</p>
-          <nav className="grid grid-cols-2 gap-2 text-[11px] font-bold uppercase tracking-[0.14em]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[var(--dim)] mb-4">NAVIGATION</p>
+          <nav className="grid grid-cols-2 gap-2 text-[12px] font-bold uppercase tracking-[0.14em]">
             <Link href="/" className="footer-micro-link flex min-h-11 items-center">HOME</Link>
             <Link href="/about" className="footer-micro-link flex min-h-11 items-center">ABOUT</Link>
             <Link href="/projects" className="footer-micro-link flex min-h-11 items-center">PROJECTS</Link>
@@ -51,8 +51,8 @@ export default function Footer() {
 
         {/* System Status */}
         <div className="dossier-strip">
-          <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[var(--dim)] mb-4">SYSTEM_STATUS</p>
-          <div className="space-y-2 font-mono text-[10px] text-[var(--muted)]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[var(--dim)] mb-4">SYSTEM_STATUS</p>
+          <div className="space-y-2 font-mono text-[12px] text-[var(--muted)]">
             <div className="flex items-center gap-2">
               <span className="pulse-dot h-1.5 w-1.5 bg-[var(--accent-gold)]" style={{ display: "inline-block" }} />
               <span>ALL_SYSTEMS: ONLINE</span>
@@ -78,11 +78,11 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="mx-auto max-w-[1296px] px-5 py-5 md:px-10 xl:px-0 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--dim)]">
-          © 2026 RAIHAN_ARIANSYAH // ALL_RIGHTS_RESERVED
+        <p className="text-[12px] font-bold tracking-[0.2em] text-[var(--dim)]">
+          © 2026 Raihan Ariansyah · All rights reserved
         </p>
-        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--dim)]">
-          CASE_FILE_OS // NEXT.JS // CTRL+K COMMANDS
+        <p className="text-[12px] font-bold tracking-[0.2em] text-[var(--dim)]">
+          Case file OS · Next.js · Ctrl+K commands
         </p>
       </div>
     </footer>

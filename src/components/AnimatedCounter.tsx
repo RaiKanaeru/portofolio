@@ -45,7 +45,7 @@ export default function AnimatedCounter({ target, label }: { target: number; lab
       <p className="heading-font text-4xl font-bold text-[var(--ink)]">
         {String(count).padStart(2, "0")}
       </p>
-      <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--dim)]">{label}</p>
+      <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--dim)]">{label}</p>
     </div>
   );
 }

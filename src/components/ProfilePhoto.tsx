@@ -15,7 +15,7 @@ export default function ProfilePhoto({ alt = "Foto Raihan Ariansyah" }: { alt?: 
           priority={false}
         />
       </div>
-      <span className="mt-2 block text-center text-[8px] font-bold uppercase tracking-[0.4em] text-[var(--dim)]">
+      <span className="mt-2 block text-center text-[11px] font-bold uppercase tracking-[0.4em] text-[var(--dim)]">
         SUBJECT_PROFILE
       </span>
     </div>

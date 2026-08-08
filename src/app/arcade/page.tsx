@@ -26,7 +26,7 @@ export default function ArcadePage() {
 
       {/* Info Box */}
       <div className="cyber-reveal mt-12 terminal-card p-6 max-w-xl mx-auto">
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-4">{"// GAME_INFO"}</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-4">{"// GAME_INFO"}</p>
         <div className="font-mono text-[12px] text-[var(--muted)] space-y-2">
           <p><span className="text-[var(--ink)]">EASY</span> — AI reacts slowly, leaves big gaps.</p>
           <p><span className="text-[var(--ink)]">MEDIUM</span> — AI tracks the ball with realistic delay.</p>

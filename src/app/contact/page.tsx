@@ -40,30 +40,30 @@ export default async function ContactPage() {
               href={`mailto:${data.profile.email}`}
               className="dossier-card spotlight-card group block h-full transition-all hover:border-[var(--accent-cyan)]"
             >
-              <p className="relative z-[1] text-[10px] font-bold text-[var(--dim)] mb-3">EMAIL_</p>
+              <p className="relative z-[1] text-[11px] font-bold text-[var(--dim)] mb-3">EMAIL_</p>
               <p className="relative z-[1] text-base font-bold text-[var(--ink)] group-hover:text-[var(--accent-cyan)] transition-colors break-all">
                 {data.profile.email}
               </p>
-              <p className="relative z-[1] mt-4 text-[10px] font-bold text-[var(--muted)] opacity-60 group-hover:opacity-100 transition">SEND_MESSAGE →</p>
+              <p className="relative z-[1] mt-4 text-[11px] font-bold text-[var(--muted)] opacity-60 group-hover:opacity-100 transition">SEND_MESSAGE →</p>
             </a>
           </TiltCard>
 
           <TiltCard>
             <div className="dossier-card spotlight-card h-full">
-              <p className="relative z-[1] text-[10px] font-bold text-[var(--dim)] mb-3">LOCATION_</p>
+              <p className="relative z-[1] text-[11px] font-bold text-[var(--dim)] mb-3">LOCATION_</p>
               <p className="relative z-[1] text-base font-bold text-[var(--ink)]">{data.profile.location}</p>
-              <p className="relative z-[1] mt-4 text-[10px] font-bold text-[var(--muted)]">{locale === "id" ? "ZONA WAKTU WIB (UTC+7)" : "TIMEZONE WIB (UTC+7)"}</p>
+              <p className="relative z-[1] mt-4 text-[11px] font-bold text-[var(--muted)]">{locale === "id" ? "ZONA WAKTU WIB (UTC+7)" : "TIMEZONE WIB (UTC+7)"}</p>
             </div>
           </TiltCard>
 
           <TiltCard>
             <div className="dossier-card spotlight-card h-full">
-              <p className="relative z-[1] text-[10px] font-bold text-[var(--dim)] mb-3">STATUS_</p>
+              <p className="relative z-[1] text-[11px] font-bold text-[var(--dim)] mb-3">STATUS_</p>
               <div className="relative z-[1] flex items-center gap-3">
                 <span className="pulse-dot h-2 w-2 bg-[var(--accent-cyan)]" style={{ display: "inline-block" }} />
                 <p className="text-base font-bold text-[var(--accent-cyan)]">{data.ui.open_to_work}</p>
               </div>
-              <p className="relative z-[1] mt-4 text-[10px] font-bold text-[var(--muted)]">
+              <p className="relative z-[1] mt-4 text-[11px] font-bold text-[var(--muted)]">
                 {locale === "id" ? "TERSEDIA UNTUK KOLABORASI" : "AVAILABLE FOR COLLABORATION"}
               </p>
             </div>
@@ -74,7 +74,7 @@ export default async function ContactPage() {
         <div className="mt-16 contact-panel p-8 md:p-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">READY_TO_CONNECT</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">READY_TO_CONNECT</p>
               <ScrollRevealText
                 text={locale === "id"
                   ? "Kirimkan email kapanpun — saya akan membalas secepatnya."

@@ -78,7 +78,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           {/* Metadata sidebar */}
           <aside className="dossier-panel p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">{data.ui.project_meta}</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">{data.ui.project_meta}</p>
             <dl className="mt-6 space-y-4">
               {[
                 ["Category", project.category],
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 ["Stack", project.stack],
               ].map(([label, value]) => (
                 <div key={label} className="border-b border-[var(--line-subtle)] pb-4 last:border-0">
-                  <dt className="text-[10px] font-bold text-[var(--dim)]">{label}</dt>
+                  <dt className="text-[11px] font-bold text-[var(--dim)]">{label}</dt>
                   <dd className="mt-2 text-[13px] font-bold text-[var(--ink)]">{value}</dd>
                 </div>
               ))}
@@ -112,7 +112,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         {/* Contact CTA */}
         <section className="contact-panel mt-16 p-8 text-[var(--ink)] md:p-10">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">{data.ui.collab_brief}</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]">{data.ui.collab_brief}</p>
           <h2 className="heading-font mt-5 text-3xl font-bold">{data.ui.contact_title}</h2>
           <a className="mt-6 inline-block text-sm font-bold text-[var(--accent-cyan)] hover:text-[var(--ink)] transition-colors" href={`mailto:${data.profile.email}`}>{data.profile.email}</a>
         </section>

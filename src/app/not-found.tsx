@@ -45,7 +45,7 @@ export default function NotFound() {
         </div>
 
         {/* Hint */}
-        <p className="mt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--dim)]">
+        <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--dim)]">
           TIP: PRESS CTRL+K TO OPEN COMMAND PALETTE
         </p>
       </div>

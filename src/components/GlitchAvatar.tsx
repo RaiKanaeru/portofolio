@@ -162,7 +162,7 @@ export default function GlitchAvatar() {
         className="transition-all duration-300"
       />
       <div className="absolute bottom-4 left-0 right-0 text-center">
-        <span className="text-[8px] font-bold uppercase tracking-[0.4em] text-[var(--dim)]">
+        <span className="text-[11px] font-bold uppercase tracking-[0.4em] text-[var(--dim)]">
           SUBJECT_PROFILE
         </span>
       </div>

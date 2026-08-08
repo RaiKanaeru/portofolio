@@ -50,7 +50,7 @@ export default async function AboutPage() {
       <div className="cyber-reveal mb-20 grid gap-8 lg:grid-cols-[1fr_280px_400px] [&>*]:min-w-0">
         <div className="space-y-6">
           <div className="cyber-card p-7">
-            <p className="text-[10px] font-bold text-[var(--dim)] mb-4">PERSONAL_DATA</p>
+            <p className="text-[11px] font-bold text-[var(--dim)] mb-4">PERSONAL_DATA</p>
             <div className="space-y-3">
               {[
                 [locale === "id" ? "Nama" : "Name", data.profile.name],
@@ -61,7 +61,7 @@ export default async function AboutPage() {
                 ["Email", data.profile.email],
               ].map(([label, value]) => (
                 <div key={label} className="border-b border-[var(--line-subtle)] pb-3 last:border-b-0 grid grid-cols-[100px_1fr] gap-4">
-                  <span className="text-[10px] font-bold text-[var(--dim)]">{label}</span>
+                  <span className="text-[11px] font-bold text-[var(--dim)]">{label}</span>
                   <span className="text-[13px] font-bold text-[var(--ink)]">
                     <TypewriterText text={value} delay={300} speed={15} />
                   </span>
@@ -90,7 +90,7 @@ export default async function AboutPage() {
               <article key={item.title} className="cyber-card spotlight-card p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-[var(--ink)]">{item.title}</h3>
-                  <span className="text-[10px] font-bold text-[var(--dim)]">SYS_0{index + 1}</span>
+                  <span className="text-[11px] font-bold text-[var(--dim)]">SYS_0{index + 1}</span>
                 </div>
                 <p className="mt-4 text-[11px] font-bold text-[var(--muted)]">{item.meta}</p>
                 <div className="mt-5 h-[1px] bg-gradient-to-r from-[var(--line)] via-[rgba(255,255,255,0.12)] to-transparent" />
@@ -100,7 +100,7 @@ export default async function AboutPage() {
         </div>
         
         <div className="flex flex-col justify-center">
-          <p className="text-[10px] font-bold text-[var(--dim)] mb-6">SKILL_METRICS</p>
+          <p className="text-[11px] font-bold text-[var(--dim)] mb-6">SKILL_METRICS</p>
           <SkillBars />
         </div>
       </div>
@@ -109,8 +109,8 @@ export default async function AboutPage() {
       <div className="cyber-reveal mb-20">
         <div className="terminal-card p-6 md:p-8">
           <div className="flex items-center justify-between mb-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">{"// ACTIVITY_LOG"}</p>
-            <p className="text-[10px] font-bold text-[var(--dim)]">1,245 COMMITS (THIS YEAR)</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)]">{"// ACTIVITY_LOG"}</p>
+            <p className="text-[11px] font-bold text-[var(--dim)]">1,245 COMMITS (THIS YEAR)</p>
           </div>
           <ActivityHeatmap />
         </div>
@@ -161,7 +161,7 @@ export default async function AboutPage() {
           <div className="grid gap-3">
             {data.organizationHighlights.map((item: string, index: number) => (
               <article key={index} className="cyber-card spotlight-card p-5">
-                <p className="text-[10px] font-bold text-[var(--dim)]">REC_0{index + 1}</p>
+                <p className="text-[11px] font-bold text-[var(--dim)]">REC_0{index + 1}</p>
                 <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{item}</p>
               </article>
             ))}

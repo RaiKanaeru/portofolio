@@ -39,7 +39,7 @@ export default async function NotesPage() {
               <h2 className="text-lg font-bold uppercase tracking-[0.06em] text-[var(--ink)] transition-colors group-hover:text-[var(--accent-cyan)]">{note.title}</h2>
               <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{note.summary}</p>
               <div className="mt-6 pt-4 border-t border-[var(--line-subtle)]">
-                <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[var(--dim)] group-hover:text-[var(--accent-cyan)] transition-colors">LOG_ENTRY</span>
+                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--dim)] group-hover:text-[var(--accent-cyan)] transition-colors">LOG_ENTRY</span>
               </div>
             </article>
           </TiltCard>
@@ -49,7 +49,7 @@ export default async function NotesPage() {
       {/* Philosophy Box */}
       <div className="cyber-reveal mt-16">
         <div className="terminal-card p-8">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-4">{"// DEVELOPMENT_PHILOSOPHY"}</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-4">{"// DEVELOPMENT_PHILOSOPHY"}</p>
           <div className="font-mono text-[12px] text-[var(--muted)] space-y-2">
             <p><span className="text-[var(--accent-cyan)]">$</span> cat philosophy.md</p>
             <p className="pl-4 text-[var(--ink)]">

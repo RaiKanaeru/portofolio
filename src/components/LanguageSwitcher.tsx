@@ -11,7 +11,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: "en
   };
 
   return (
-    <div className="flex items-center rounded-none border border-[var(--line)] bg-[var(--surface)] p-1 text-[9px] font-bold tracking-[0.1em] shadow-[0_10px_28px_rgba(31,41,55,0.06)]" aria-label="Pilih bahasa">
+    <div className="flex items-center rounded-none border border-[var(--line)] bg-[var(--surface)] p-1 text-[11px] font-bold tracking-[0.1em] shadow-[0_10px_28px_rgba(31,41,55,0.06)]" aria-label="Pilih bahasa">
       <button
         onClick={() => handleLanguageChange("en")}
         aria-pressed={currentLocale === "en"}

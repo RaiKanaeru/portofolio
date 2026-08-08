@@ -48,7 +48,7 @@ export default function ActivityHeatmap() {
       {/* Month labels */}
       <div className="flex gap-0 mb-1 ml-7">
         {months.map((m) => (
-          <span key={m} className="text-[9px] font-bold text-[var(--dim)]" style={{ width: `${(52 / 12) * 13}px` }}>
+          <span key={m} className="text-[11px] font-bold text-[var(--dim)]" style={{ width: `${(52 / 12) * 13}px` }}>
             {m}
           </span>
         ))}
@@ -58,7 +58,7 @@ export default function ActivityHeatmap() {
         {/* Day labels */}
         <div className="flex flex-col gap-[2px] mr-1 pt-0">
           {["", "Mon", "", "Wed", "", "Fri", ""].map((d, i) => (
-            <span key={i} className="text-[8px] font-bold text-[var(--dim)] h-[11px] flex items-center">
+            <span key={i} className="text-[11px] font-bold text-[var(--dim)] h-[11px] flex items-center">
               {d}
             </span>
           ))}
@@ -83,7 +83,7 @@ export default function ActivityHeatmap() {
 
       {/* Legend */}
       <div className="flex items-center gap-2 mt-3 ml-7">
-        <span className="text-[9px] font-bold text-[var(--dim)]">Less</span>
+        <span className="text-[11px] font-bold text-[var(--dim)]">Less</span>
         {[0, 1, 2, 3, 4].map((level) => (
           <div
             key={level}
@@ -91,7 +91,7 @@ export default function ActivityHeatmap() {
             style={{ background: getColor(level) }}
           />
         ))}
-        <span className="text-[9px] font-bold text-[var(--dim)]">More</span>
+        <span className="text-[11px] font-bold text-[var(--dim)]">More</span>
       </div>
     </div>
   );

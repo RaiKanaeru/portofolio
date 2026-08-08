@@ -63,7 +63,7 @@ export default function ProjectsPage() {
           <button
             key={f.value}
             onClick={() => setActiveFilter(f.value)}
-            className={`px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] transition-all duration-200 ${
+            className={`px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] transition-all duration-200 ${
               activeFilter === f.value
                 ? "bg-[rgba(255,255,255,0.14)] text-[var(--accent-cyan)] shadow-[0_12px_28px_rgba(255,255,255,0.12)]"
                 : "text-[var(--dim)] hover:text-[var(--ink)]"
@@ -105,8 +105,8 @@ export default function ProjectsPage() {
                   {project.summary}
                 </p>
                 <div className="mt-6 flex items-center justify-between gap-4 border-t border-[var(--line-subtle)] pt-5">
-                  <p className="text-[10px] font-bold text-[var(--dim)]">{project.stack}</p>
-                  <span className="text-[10px] font-bold text-[var(--muted)] opacity-70 transition group-hover:text-[var(--accent-cyan)] group-hover:opacity-100">
+                  <p className="text-[11px] font-bold text-[var(--dim)]">{project.stack}</p>
+                  <span className="text-[11px] font-bold text-[var(--muted)] opacity-70 transition group-hover:text-[var(--accent-cyan)] group-hover:opacity-100">
                     OPEN_DOSSIER →
                   </span>
                 </div>

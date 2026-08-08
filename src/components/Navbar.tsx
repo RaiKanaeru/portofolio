@@ -48,7 +48,7 @@ export default function Navbar({ locale }: { locale: "en" | "id" }) {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-5 rounded-none border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 py-3 text-[11px] font-bold tracking-[0.14em] uppercase lg:flex">
+        <nav className="hidden items-center gap-5 rounded-none border border-[var(--line-subtle)] bg-[var(--surface-soft)] px-4 py-3 text-[12px] font-bold tracking-[0.14em] uppercase lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}

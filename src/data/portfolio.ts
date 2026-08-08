@@ -23,7 +23,7 @@ type Dictionary = {
       description: string;
     };
   };
-  capabilities: { title: string; meta: string }[];
+  capabilities: { title: string; meta: string; subs?: string[] }[];
   featuredProjects: {
     number: string;
     title: string;
@@ -40,7 +40,6 @@ type Dictionary = {
   ui: Record<string, string>;
 };
 
-// Reusable types derived from the dictionary shape
 export type Profile = Dictionary["profile"];
 export type Capability = Dictionary["capabilities"][number];
 export type LearningNote = Dictionary["learningNotes"][number];
@@ -63,6 +62,8 @@ const dictionaries: Record<"en" | "id", Dictionary> = {
       learning_records: "// CATATAN_BELAJAR",
       collab_brief: "// KERTAS_KOLABORASI",
       view_archive: "LIHAT_ARSIP",
+      hero_terminal_caption: "// SESI_TERMINAL_LIVE",
+      terminal_hint: "coba: help · skills · whoami",
       hero_title: "IT PROGRAMMER YANG MEMBANGUN SISTEM SOFTWARE PRAKTIS.",
       hero_desc:
         "Saya Raihan Ariansyah, fresh graduate RPL dari SMK Negeri 13 Bandung. Saya terbiasa membangun struktur sistem: autentikasi, CRUD, database, REST API, dashboard, Firebase, monitoring realtime, mobile app, dan koneksi perangkat IoT.",
@@ -97,13 +98,41 @@ const dictionaries: Record<"en" | "id", Dictionary> = {
       },
     },
     capabilities: [
-      { title: "Fullstack Web", meta: "Laravel | Next.js | TypeScript" },
-      { title: "Sistem Backend", meta: "Go | REST API | Auth Flow" },
-      { title: "Desain Database", meta: "PostgreSQL | MySQL | Firestore" },
-      { title: "Aplikasi Mobile", meta: "Flutter | Dart | Firebase" },
-      { title: "Integrasi IoT", meta: "ESP32 | MQTT | Sensor" },
-      { title: "Integrasi API", meta: "JSON | External API | Dashboard" },
-      { title: "Pengembangan AI", meta: "Copilot | Claude | Prompt Engineering" },
+      {
+        title: "Fullstack Web",
+        meta: "Laravel | Next.js | TypeScript",
+        subs: ["CRUD + alur autentikasi", "REST API + dashboard", "Delivery web + mobile + IoT"],
+      },
+      {
+        title: "Sistem Backend",
+        meta: "Go | REST API | Auth Flow",
+        subs: ["REST API + alur auth", "Akses berbasis peran", "Kontrak API sebelum UI"],
+      },
+      {
+        title: "Desain Database",
+        meta: "PostgreSQL | MySQL | Firestore",
+        subs: ["Skema + koleksi terstruktur", "Akses data per peran", "Rekap yang mudah dibaca"],
+      },
+      {
+        title: "Aplikasi Mobile",
+        meta: "Flutter | Dart | Firebase",
+        subs: ["Alur QR + Firebase", "Data realtime", "Arsitektur layar praktis"],
+      },
+      {
+        title: "Integrasi IoT",
+        meta: "ESP32 | MQTT | Sensor",
+        subs: ["Telemetri sensor", "Data MQTT realtime", "Dashboard monitoring"],
+      },
+      {
+        title: "Integrasi API",
+        meta: "JSON | External API | Dashboard",
+        subs: ["Kontrak JSON", "Integrasi API eksternal", "Dashboard realtime"],
+      },
+      {
+        title: "Pengembangan AI",
+        meta: "Copilot | Claude | Prompt Engineering",
+        subs: ["Copilot + Claude", "Prompt engineering", "Loop debug berbantuan AI"],
+      },
     ],
     featuredProjects: [
       {
@@ -183,6 +212,8 @@ const dictionaries: Record<"en" | "id", Dictionary> = {
       learning_records: "// LEARNING_RECORDS",
       collab_brief: "// COLLABORATION_BRIEF",
       view_archive: "VIEW_ARCHIVE",
+      hero_terminal_caption: "// LIVE_TERMINAL_SESSION",
+      terminal_hint: "try: help · skills · whoami",
       hero_title: "IT PROGRAMMER BUILDING PRACTICAL SOFTWARE SYSTEMS.",
       hero_desc:
         "I am Raihan Ariansyah, an RPL fresh graduate from SMK Negeri 13 Bandung. I am accustomed to building system structures: authentication, CRUD, databases, REST APIs, dashboards, Firebase, realtime monitoring, mobile apps, and IoT device connections.",
@@ -217,13 +248,41 @@ const dictionaries: Record<"en" | "id", Dictionary> = {
       },
     },
     capabilities: [
-      { title: "Fullstack Web", meta: "Laravel | Next.js | TypeScript" },
-      { title: "Backend System", meta: "Go | REST API | Auth Flow" },
-      { title: "Database Design", meta: "PostgreSQL | MySQL | Firestore" },
-      { title: "Mobile App", meta: "Flutter | Dart | Firebase" },
-      { title: "IoT Integration", meta: "ESP32 | MQTT | Sensor" },
-      { title: "API Integration", meta: "JSON | External API | Dashboard" },
-      { title: "AI-Augmented Dev", meta: "Copilot | Claude | Prompt Engineering" },
+      {
+        title: "Fullstack Web",
+        meta: "Laravel | Next.js | TypeScript",
+        subs: ["CRUD + auth flows", "REST API + dashboard", "Web + mobile + IoT delivery"],
+      },
+      {
+        title: "Backend System",
+        meta: "Go | REST API | Auth Flow",
+        subs: ["REST API + auth flow", "Role-based access", "API contract before UI"],
+      },
+      {
+        title: "Database Design",
+        meta: "PostgreSQL | MySQL | Firestore",
+        subs: ["Structured schemas & collections", "Per-role data access", "Readable reporting"],
+      },
+      {
+        title: "Mobile App",
+        meta: "Flutter | Dart | Firebase",
+        subs: ["QR + Firebase flow", "Realtime data", "Practical screen architecture"],
+      },
+      {
+        title: "IoT Integration",
+        meta: "ESP32 | MQTT | Sensor",
+        subs: ["Sensor telemetry", "Realtime MQTT data", "Monitoring dashboard"],
+      },
+      {
+        title: "API Integration",
+        meta: "JSON | External API | Dashboard",
+        subs: ["JSON contracts", "External API wiring", "Realtime dashboard"],
+      },
+      {
+        title: "AI-Augmented Dev",
+        meta: "Copilot | Claude | Prompt Engineering",
+        subs: ["Copilot + Claude", "Prompt engineering", "AI-assisted debug loop"],
+      },
     ],
     featuredProjects: [
       {
@@ -300,20 +359,19 @@ export const getAllProjects = (locale: "en" | "id" = "id") => {
       ...project,
       slug: slugifyProjectTitle(project.title),
       description: project.summary,
-      caseStudy: project.caseStudy,
     })),
-    ...data.supportingProjects.map((project) => ({
+    ...data.supportingProjects.map((project) => {
+      const summary = locale === "id"
+        ? `${project.title} adalah proyek pendukung yang difokuskan pada ${project.stack}.`
+        : `${project.title} is a supporting portfolio build focused on ${project.stack}.`;
+      return {
       ...project,
       slug: slugifyProjectTitle(project.title),
       category: locale === "id" ? "Proyek Pendukung" : "Supporting Build",
       role: "Developer",
       status: "Portfolio Project",
-      summary: locale === "id" 
-        ? `${project.title} adalah proyek pendukung yang difokuskan pada ${project.stack}.`
-        : `${project.title} is a supporting portfolio build focused on ${project.stack}.`,
-      description: locale === "id" 
-        ? `${project.title} adalah proyek pendukung yang difokuskan pada ${project.stack}.`
-        : `${project.title} is a supporting portfolio build focused on ${project.stack}.`,
+      summary,
+      description: summary,
       caseStudy: {
         problem: locale === "id" 
           ? "Sebuah proyek pendukung tetap membutuhkan tujuan, cakupan, dan batasan teknis yang jelas agar berguna sebagai bukti portofolio."
@@ -325,6 +383,7 @@ export const getAllProjects = (locale: "en" | "id" = "id") => {
           ? "Entri portofolio ringkas yang mendukung studi kasus utama dan menunjukkan jangkauan teknis yang lebih luas."
           : "A compact portfolio entry that supports the main case studies and shows broader technical range.",
       },
-    })),
+      };
+    }),
   ];
 };

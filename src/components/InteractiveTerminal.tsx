@@ -94,9 +94,6 @@ const COMMANDS: Record<string, string[]> = {
     "    Building the future,",
     "    one commit at a time.",
   ],
-  date: [],
-  games: ["Redirecting to /arcade..."],
-  clear: [],
 };
 
 interface TermLine {
@@ -104,13 +101,26 @@ interface TermLine {
   text: string;
 }
 
-export default function InteractiveTerminal() {
+interface InteractiveTerminalProps {
+  /** Auto-type a welcome command sequence on first view, then hand over control. */
+  autoBoot?: boolean;
+}
+
+/** Sequence typed out once on mount when `autoBoot` is enabled (homepage hero). */
+const BOOT_SEQUENCE: { input: string; output: string[] }[] = [
+  { input: "whoami", output: COMMANDS.whoami },
+  { input: "help", output: COMMANDS.help },
+];
+
+export default function InteractiveTerminal({ autoBoot = false }: InteractiveTerminalProps = {}) {
   const [lines, setLines] = useState<TermLine[]>([
     { type: "output", text: "Welcome to Raihan's Terminal v2.0" },
     { type: "output", text: 'Type "help" for available commands.' },
     { type: "output", text: "" },
   ]);
   const [input, setInput] = useState("");
+  const [bootInput, setBootInput] = useState("");
+  const [bootDone, setBootDone] = useState(!autoBoot);
   const outputRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -121,10 +131,63 @@ export default function InteractiveTerminal() {
     output.scrollTo({ top: output.scrollHeight, behavior: "smooth" });
   }, [lines]);
 
+  // Auto-boot: type `whoami`, then `help`, then leave the terminal fully interactive.
+  useEffect(() => {
+    if (!autoBoot || bootDone) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timers: number[] = [];
+    const later = (fn: () => void, ms: number) => timers.push(window.setTimeout(fn, ms));
+
+    const commit = (step: number) => {
+      const { input: cmd, output } = BOOT_SEQUENCE[step];
+      setLines((prev) => [
+        ...prev,
+        { type: "input", text: `raihan@portfolio:~$ ${cmd}` },
+        ...output.map((line) => ({ type: "output" as const, text: line })),
+        { type: "output", text: "" },
+      ]);
+    };
+
+    if (reduced) {
+      BOOT_SEQUENCE.forEach((_, i) => later(() => commit(i), 0));
+      later(() => setBootDone(true), 0);
+      return;
+    }
+
+    const typeCommand = (step: number) => {
+      if (step >= BOOT_SEQUENCE.length) {
+        setBootDone(true);
+        return;
+      }
+      const cmd = BOOT_SEQUENCE[step].input;
+      let i = 0;
+      const typing = window.setInterval(() => {
+        i += 1;
+        setBootInput(cmd.slice(0, i));
+        if (i >= cmd.length) {
+          clearInterval(typing);
+          commit(step);
+          setBootInput("");
+          later(() => typeCommand(step + 1), 480);
+        }
+      }, 90);
+      timers.push(typing);
+    };
+
+    later(() => typeCommand(0), 600);
+
+    return () => {
+      timers.forEach((t) => clearTimeout(t));
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoBoot]);
+
   const handleSubmit = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
       e.stopPropagation();
+      if (!bootDone) return;
       const cmd = input.trim().toLowerCase();
       const newLines: TermLine[] = [
         ...lines,
@@ -148,9 +211,7 @@ export default function InteractiveTerminal() {
         COMMANDS[cmd].forEach((line) => {
           newLines.push({ type: "output", text: line });
         });
-      } else if (cmd === "") {
-        // do nothing
-      } else {
+      } else if (cmd !== "") {
         newLines.push({
           type: "output",
           text: `command not found: ${cmd}. Type "help" for available commands.`,
@@ -161,7 +222,7 @@ export default function InteractiveTerminal() {
       setLines(newLines);
       setInput("");
     },
-    [input, lines]
+    [input, lines, bootDone]
   );
 
   return (
@@ -169,17 +230,15 @@ export default function InteractiveTerminal() {
       className="terminal-card flex flex-col h-[420px] cursor-text"
       onClick={() => inputRef.current?.focus()}
     >
-      {/* Title Bar */}
       <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--line-subtle)]">
         <span className="h-2.5 w-2.5 rounded-none bg-[#ff5f56]" />
         <span className="h-2.5 w-2.5 rounded-none bg-[#ffbd2e]" />
         <span className="h-2.5 w-2.5 rounded-none bg-[#27c93f]" />
-        <span className="ml-3 text-[10px] font-bold text-[var(--dim)] uppercase tracking-[0.14em]">
+        <span className="ml-3 text-[11px] font-bold text-[var(--dim)] uppercase tracking-[0.14em]">
           raihan@portfolio: ~/about
         </span>
       </div>
 
-      {/* Terminal Output */}
       <div ref={outputRef} className="flex-1 overflow-y-auto overscroll-contain p-4 font-mono text-[12px] leading-6">
         {lines.map((line, i) => (
           <div
@@ -190,7 +249,16 @@ export default function InteractiveTerminal() {
           </div>
         ))}
 
-        {/* Input line */}
+        {!bootDone && (
+          <div className="flex items-center gap-2">
+            <span className="text-[var(--accent-cyan)] whitespace-nowrap">raihan@portfolio:~$</span>
+            <span className="font-mono text-[12px] text-[var(--accent-cyan)]">
+              {bootInput}
+              <span className="cursor-blink" aria-hidden="true" />
+            </span>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="flex items-center gap-2">
           <span className="text-[var(--accent-cyan)] whitespace-nowrap">raihan@portfolio:~$</span>
           <input
@@ -203,9 +271,10 @@ export default function InteractiveTerminal() {
                 e.stopPropagation();
               }
             }}
-            className="flex-1 bg-transparent text-[var(--ink)] outline-none caret-[var(--accent-cyan)] font-mono text-[12px]"
+            className="min-h-11 flex-1 bg-transparent text-[var(--ink)] outline-none caret-[var(--accent-cyan)] font-mono text-[12px]"
             autoComplete="off"
             spellCheck={false}
+            disabled={!bootDone}
           />
         </form>
       </div>

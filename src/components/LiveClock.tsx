@@ -19,7 +19,7 @@ export default function LiveClock() {
   }, []);
 
   return (
-    <span className="font-mono text-[10px] text-[var(--dim)] tracking-[0.15em]">
+    <span className="font-mono text-[11px] text-[var(--dim)] tracking-[0.15em]">
       {time || "--:--:--"} WIB
     </span>
   );

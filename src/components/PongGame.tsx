@@ -465,7 +465,7 @@ export default function PongGame() {
             <button
               key={d}
               onClick={() => { setDifficulty(d); resetGame(); }}
-              className={`px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] transition-all ${
+              className={`px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] transition-all ${
                 difficulty === d
                   ? d === "HARD"
                     ? "bg-[var(--accent-gold)] text-[var(--surface)] shadow-[0_10px_24px_rgba(168,85,10,0.24)]"
@@ -481,7 +481,7 @@ export default function PongGame() {
         {/* Restart */}
         <button
           onClick={resetGame}
-          className="cyber-btn-secondary !py-2 !px-5 !text-[10px]"
+          className="cyber-btn-secondary !py-2 !px-5 !text-[11px]"
         >
           RESTART
         </button>
@@ -490,12 +490,12 @@ export default function PongGame() {
       {/* Score Bar */}
       <div className="flex items-center gap-6 text-center">
         <div>
-          <p className="text-[10px] font-bold text-[var(--accent-cyan)] tracking-[0.14em]">YOU</p>
+          <p className="text-[11px] font-bold text-[var(--accent-cyan)] tracking-[0.14em]">YOU</p>
           <p className="heading-font text-3xl font-bold text-[var(--accent-cyan)]">{playerScore}</p>
         </div>
         <span className="text-[var(--dim)] heading-font text-xl">VS</span>
         <div>
-          <p className="text-[10px] font-bold text-[var(--accent-gold)] tracking-[0.14em]">AI [{difficulty}]</p>
+          <p className="text-[11px] font-bold text-[var(--accent-gold)] tracking-[0.14em]">AI [{difficulty}]</p>
           <p className="heading-font text-3xl font-bold text-[var(--accent-gold)]">{aiScore}</p>
         </div>
       </div>
@@ -513,7 +513,7 @@ export default function PongGame() {
       </div>
 
       {/* Instructions */}
-      <p className="text-[10px] font-bold text-[var(--dim)] tracking-[0.14em] uppercase">
+      <p className="text-[11px] font-bold text-[var(--dim)] tracking-[0.14em] uppercase">
         First to {MAX_SCORE} wins • Move mouse/touch to control
       </p>
     </div>
